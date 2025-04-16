@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DC Current Sidebar</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1e1e1e;
+      margin: 0;
+      padding: 0;
+    }
+
+    .sidebar-container {
+      position: fixed;
+      top: 0;
+      right: -350px;
+      width: 350px;
+      height: 100%;
+      background-color: #2c2c2c;
+      box-shadow: -2px 0 10px rgba(0,0,0,0.5);
+      padding: 20px;
+      overflow-y: auto;
+      color: #fff;
+      z-index: 1000;
+      transition: right 0.3s ease;
+    }
+
+    .sidebar-container.open {
+      right: 0;
+    }
+
+    .sidebar-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .sidebar-header h2 {
+      font-size: 1.2em;
+      margin: 0;
+    }
+
+    .sidebar-subtitle {
+      font-size: 0.9em;
+      color: #aaa;
+      margin-bottom: 20px;
+    }
+
+    .realtime-box {
+      background-color: #1e1e1e;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .time-row {
+      display: flex;
+      justify-content: space-around;
+      font-size: 0.85em;
+      margin-bottom: 10px;
+      color: #ccc;
+    }
+
+    .realtime-value {
+      font-size: 2em;
+      font-weight: bold;
+    }
+
+    .unit {
+      font-size: 0.8em;
+      color: #aaa;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #444;
+      margin: 20px 0 10px;
+    }
+
+    .field {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .field label {
+      flex: 1;
+      font-size: 0.9em;
+    }
+
+    .field input,
+    .field select {
+      flex: 1;
+      background-color: #3c3c3c;
+      border: none;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 5px;
+      text-align: right;
+    }
+
+    .toggle {
+      background-color: #3c3c3c;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 0.8em;
+      color: #aaa;
+      text-align: center;
+      width: 100px;
+    }
+
+    .toggle.disabled {
+      background-color: #444;
+      color: #aaa;
+    }
+
+    .open-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      padding: 10px 20px;
+      background-color: #444;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <button class="open-btn" onclick="toggleSidebar()">Show Sidebar</button>
+
+  <div class="sidebar-container" id="sidebar">
+    <div class="sidebar-header">
+      <h2>DC Current</h2>
+      <span style="cursor: pointer;" onclick="toggleSidebar()">✕</span>
+    </div>
+    <div class="sidebar-subtitle">Monitoring Master / Inputs-2</div>
+
+    <div class="realtime-box">
+      <div class="time-row">
+        <span>PST 1:50pm</span>
+        <span>UCT 9:50pm 🔄</span>
+      </div>
+      <div class="realtime-value">2000 <span class="unit">Amps</span></div>
+    </div>
+
+    <hr>
+    <div class="sidebar-subtitle">Point Details</div>
+
+    <div class="field"><label>Modbus Register</label><input type="text" value="30009" readonly></div>
+    <div class="field"><label>Object Type</label><input type="text" value="Modbus Input Register" readonly></div>
+    <div class="field"><label>Data Type</label><input type="text" value="Int32" readonly></div>
+    <div class="field"><label>Unit of Measure</label><input type="text" value="Amps" readonly></div>
+    <div class="field"><label>Scaling</label><input type="text" value="Eng" readonly></div>
+    <div class="field"><label>Engineering Min</label><input type="text" value="-7000" readonly></div>
+    <div class="field"><label>Engineering Max</label><input type="text" value="7000" readonly></div>
+    <div class="field"><label>Conversion Factor</label><input type="text" value="1" readonly></div>
+    <div class="field"><label>Significant Digits</label><input type="text" value="2" readonly></div>
+    <div class="field"><label>Conversion Offset</label><input type="text" value="0" readonly></div>
+    <div class="field"><label>Deadband</label><input type="text" value="0" readonly></div>
+    <div class="field"><label>Negate</label><button class="toggle disabled">Disabled</button></div>
+    <div class="field"><label>Historization</label><button class="toggle disabled">Disabled</button></div>
+    <div class="field"><label>Point Type</label><input type="text" value="None" readonly></div>
+  </div>
+
+  <script>
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+    }
+  </script>
+</body>
+</html>
