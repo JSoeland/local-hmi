@@ -1160,3 +1160,11 @@ div.search-container {
 		font-size:18px;
 		font-weight:600;
 	}
+	
+	.active-page {
+		background:#585757;
+		border-radius:6px;
+	}
+	.active-page span i {
+		color:#ffbf3c;
+	}
