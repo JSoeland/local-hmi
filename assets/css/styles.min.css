@@ -980,7 +980,8 @@ tr.alarm {
 .alarm-icon {
 	color:#FC8F2B;
 	position:absolute;
-	left:-1px;
+	left:8px;
+	
 	padding-top:3px;
 }
 
@@ -1155,4 +1156,8 @@ div.search-container {
 	}
 	.active-page span i {
 		color:#ffbf3c;
+	}
+	.chart-image img {
+		width:100%;
+		min-width:200px;
 	}
