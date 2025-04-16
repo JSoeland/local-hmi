@@ -972,7 +972,7 @@ img.imgmodal-content {
 	text-align:center !important;
 	width:146px;
 	height:146px;
-	padding-top:20%;
+	padding-top:38px;
 }
 tr.alarm {
 	background: #222222;
@@ -1064,18 +1064,6 @@ tr.alarm {
 
 
 
-.dd-button:after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  right: 15px;
-  transform: translateY(-50%);
-  width: 0; 
-  height: 0; 
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-top: 5px solid black;
-}
 
 .dd-input {
   display: none;
