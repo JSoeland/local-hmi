@@ -51,13 +51,29 @@ header {
       gap: 16px;
     }
 
+    .card-grid2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(306px, 1fr));
+      gap: 20px;
+	  padding-bottom:40px;
+    }
+	
+	    .card-grid3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+      gap: 20px;
+	  padding-bottom:40px;
+    }
+	
     .carda {
-      background-color: #2b2b2b;
       padding: 16px;
       border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      border: 1px solid #454545;
 	  color:#fff;
     }
+	.card-grid-inverter .carda:hover {
+		background:rgba(0,0,0,0.2);
+	}
 
     .carda h3 {
       margin: 0 0 8px;
@@ -128,6 +144,7 @@ header {
       transition: all 0.3s ease-out;
       background-color: #323232;
 	  padding: 0 16px;
+	  margin-top:-8px;
     }
 
     .control-content.open {
@@ -136,7 +153,7 @@ header {
 	  margin-top:-10px;
 	  border-radius:0 0 6px 6px;
 	  color:#fff;
-	  	  border:1px solid #909090;
+	    background:#585757;
 
     }
 	.control-header:hover {
