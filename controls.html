@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="assets/css/accordion.css" />
 </head>
 
-<body>
+<body style="overflow-x: hidden;">
   <!--  Body Wrapper -->
   <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
     data-sidebar-position="fixed" data-header-position="fixed">
@@ -58,8 +58,16 @@
         <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
 		  
 		  <ul id="sidebarnav">
-            <li class="sidebar-item">
+		   <li class="sidebar-item">
               <a class="sidebar-link" href="./index.html" aria-expanded="false">
+                <span>
+                  <i class="ti ti-timeline-event"></i>
+                </span>
+                <span class="hide-menu">Site Diagram</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="./site-equipment.html" aria-expanded="false">
                 <span>
                   <i class="ti ti-layout-dashboard"></i>
                 </span>
@@ -141,7 +149,7 @@
 		   <div class="dd-button">Site Controls <i class="ti ti-chevron-down"></i></div>
 			<input type="checkbox" class="dd-input" id="test">
 			  <ul class="dd-menu">
-			  	<li style="background:#ddd;">Site Controls</li>
+			  	<li style="background:#131313;">Site Controls</li>
 			    <li>Device Controls</li>
 			  </ul>
 		   </label>
@@ -151,23 +159,21 @@
 		 <small>3:30:00 PM</small>
 		  
 		  <div class="right-settings"><i class="ti ti-edit"></i> </div>
-			<div class="right-settings"><i class="ti ti-plus"></i> </div>
+			
 			<div class="right-settings"><i class="ti ti-reload"></i> </div>
 		   </div>
     </div>
 	
-	  
-	   
-           
 		<div class="row">
          
 		
 		  <div class="col-lg-4">
-		  <label>
+		  <div class="pill active">All</div><div class="pill inactive">Power</div><div class="pill inactive">BESS</div><div class="pill inactive">Inverter</div><div class="pill inactive">Substation</div><div class="pill inactive">Voltage</div>
+		 <!-- <label>
 				<div class="controls-dropdown dd-button">All <i class="ti ti-chevron-down"></i></div>
 				<input type="checkbox" class="dd-input" id="test">
 			  <ul class="dd-menu">
-			    <li style="background-color:#ddd;">All</li>
+			    <li style="background-color:#131313;">All</li>
 			  	<li>Power Regulation</li>
 			    <li>BESS</li>
 				<li>Inverter</li>
@@ -175,6 +181,7 @@
 				<li>Voltage Regulation</li>
 			  </ul>
 			</label>
+			-->
                   <div class="card trend">
                     <div class="card-body">
 						    <div class="row-legend align-items-center">
@@ -282,7 +289,7 @@ maximum power output of the site.</small>
 		  <ul><li>Power</li><li class="emphasis">5.19</li><li>MW</li></ul>
           <ul><li>Reactive Power</li><li>-17.366</li><li>MVAR</li></ul>
 		  <ul><li>Voltage</li><li>355.9</li><li>KV</li></ul>
-          <ul><li>Power Factor</li><li>1/li><li>PF</li></ul>
+          <ul><li>Power Factor</li><li>1.0<li>PF</li></ul>
         </div>
         <div class="carda">
           <h3><span class="greendot">•</span>BESS Meter</h3>

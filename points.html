@@ -7,7 +7,7 @@
   <title>Trimark | True:Control</title>
   <link rel="shortcut icon" type="image/png" href="assets/images/logos/favicon.png" />
   <link rel="stylesheet" href="assets/css/styles.min.css" />
- 
+ <link rel="stylesheet" href="assets/css/sidebar.css" />
 </head>
 
 <body>
@@ -58,8 +58,16 @@
         <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
 		  
 		  <ul id="sidebarnav">
-            <li class="sidebar-item">
+		            	<li class="sidebar-item">
               <a class="sidebar-link" href="./index.html" aria-expanded="false">
+                <span>
+                  <i class="ti ti-timeline-event"></i>
+                </span>
+                <span class="hide-menu">Site Diagram</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="./site-equipment.html" aria-expanded="false">
                 <span>
                   <i class="ti ti-layout-dashboard"></i>
                 </span>
@@ -151,7 +159,7 @@
 		   <div class="active dd-button">Inverters <i class="ti ti-chevron-down"></i></div>
 			<input type="checkbox" class="dd-input" id="test">
 			  <ul class="dd-menu">
-				<li style="background:#ddd;"><i class="ti ti-chevron-right"></i>&nbsp; <i class="ti ti-square-check"></i>&nbsp; Inverter</li>
+				<li style="background:#131313;"><i class="ti ti-chevron-right"></i>&nbsp; <i class="ti ti-square-check"></i>&nbsp; Inverter</li>
 				<li><i class="ti ti-chevron-right"></i>&nbsp; <i class="ti ti-square"></i>&nbsp; Meter</li>
 				<li><i class="ti ti-chevron-right"></i>&nbsp; <i class="ti ti-square"></i>&nbsp; Meteorological</li>
 				<li><i class="ti ti-chevron-right"></i>&nbsp; <i class="ti ti-square"></i>&nbsp; Other</li>
@@ -182,7 +190,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
+        <tr onclick="toggleSidebar()" style="cursor:pointer;">
           <td><strong>Point Name</strong><br><small>Folder / Device Name / Dataset Name</small></td>
           <td> <div class="icon-left"><i class="ti ti-arrow-left"></i></div><strong>Modbus</strong><br><small>Holding Register</small></td>
 		  <td><div class="device-pill"> <i class="ti ti-exchange"></i>Inverter</div></td>
@@ -194,7 +202,7 @@
 		  <td><small>4/8/25</small><br> 10:20am</td>
 		  <td><small>4/8/25</small><br> 10:20am</td>
         </tr>
-		 <tr>
+		 <tr onclick="toggleSidebar()" style="cursor:pointer;">
           <td><strong>Point Name</strong><br><small>Folder / Device</small></td>
           <td> <div class="icon-left"><i class="ti ti-calculator" style="color:#909090;"></i></div><strong>Calculation</strong><br><small>Control Point</small></td>
 		  <td><div class="device-pill"> <i class="ti ti-exchange"></i>Inverter</div></td>
@@ -206,7 +214,7 @@
 		  <td><small>4/8/25</small><br> 10:20am</td>
 		  <td><small>4/8/25</small><br> 10:20am</td>
         </tr>
-        <tr>
+        <tr onclick="toggleSidebar()" style="cursor:pointer;">
           <td><strong>Point Name</strong><br><small>Folder / Device Name / Dataset Name</small></td>
           <td> <div class="icon-left"><i class="ti ti-arrow-left"></i></div><strong>Modbus</strong><br><small>Holding Register</small></td>
 		  <td><div class="device-pill"> <i class="ti ti-exchange"></i>Inverter</div></td>
@@ -218,7 +226,7 @@
 		  <td><small>4/8/25</small><br> 10:20am</td>
 		  <td><small>4/8/25</small><br> 10:20am</td>
         </tr>
-		 <tr>
+		 <tr onclick="toggleSidebar()" style="cursor:pointer;">
           <td><strong>Point Name</strong><br><small>Folder / Device</small></td>
           <td> <div class="icon-left"><i class="ti ti-calculator" style="color:#909090;"></i></div><strong>Calculation</strong><br><small>Average</small></td>
 		  <td><div class="device-pill"> <i class="ti ti-exchange"></i>Inverter</div></td>
@@ -230,7 +238,7 @@
 		  <td><small>4/8/25</small><br> 10:20am</td>
 		  <td><small>4/8/25</small><br> 10:20am</td>
         </tr>
-		 <tr>
+		 <tr onclick="toggleSidebar()" style="cursor:pointer;">
           <td><strong>Point Name</strong><br><small>Folder / Device Name / Dataset Name</small></td>
           <td> <div class="icon-left"><i class="ti ti-arrow-left"></i></div><strong>Modbus</strong><br><small>Holding Register</small></td>
 		  <td><div class="device-pill"> <i class="ti ti-exchange"></i>Inverter</div></td>
@@ -252,8 +260,47 @@
     </div>
   </div>
  
-  <script src="assets/js/sidebarmenu.js"></script>
+  <div class="sidebar-container" id="sidebar">
+    <div class="sidebar-header">
+      <h2>Point Name</h2>
+      <span style="cursor: pointer;" onclick="toggleSidebar()">✕</span>
+    </div>
+    <div class="sidebar-subtitle">Server / Dataset Name</div>
 
+    <div class="realtime-box">
+      <div class="time-row">
+        <span>PST 1:50pm</span>
+        <span>UTC 9:50pm </span>
+      </div>
+      <div class="realtime-value">56<span class="unit">%</span></div>
+    </div>
+
+    <hr>
+    <div class="sidebar-subtitle">Point Details</div>
+
+    <div class="field"><label>Modbus Register</label><input type="text" value="30009" readonly></div>
+    <div class="field"><label>Object Type</label><input type="text" value="Modbus Input Register" readonly></div>
+    <div class="field"><label>Data Type</label><input type="text" value="Int32" readonly></div>
+    <div class="field"><label>Unit of Measure</label><input type="text" value="Amps" readonly></div>
+    <div class="field"><label>Scaling</label><input type="text" value="Eng" readonly></div>
+    <div class="field"><label>Engineering Min</label><input type="text" value="-7000" readonly></div>
+    <div class="field"><label>Engineering Max</label><input type="text" value="7000" readonly></div>
+    <div class="field"><label>Conversion Factor</label><input type="text" value="1" readonly></div>
+    <div class="field"><label>Significant Digits</label><input type="text" value="2" readonly></div>
+    <div class="field"><label>Conversion Offset</label><input type="text" value="0" readonly></div>
+    <div class="field"><label>Deadband</label><input type="text" value="0" readonly></div>
+    <div class="field"><label>Negate</label><input type="text" value="Disabled" readonly></div>
+    <div class="field"><label>Historization</label><input type="text" value="Disabled" readonly></div>
+    <div class="field"><label>Point Type</label><input type="text" value="None" readonly></div>
+  </div>
+  
+  
+  <script src="assets/js/sidebarmenu.js"></script>
+ <script>
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+    }
+  </script>
 </body>
 
 </html>

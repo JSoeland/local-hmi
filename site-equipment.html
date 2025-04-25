@@ -7,9 +7,11 @@
   <title>Trimark | True:Control</title>
   <link rel="shortcut icon" type="image/png" href="assets/images/logos/favicon.png" />
   <link rel="stylesheet" href="assets/css/styles.min.css" />
+    <link rel="stylesheet" href="assets/css/accordion.css" />
+
 </head>
 
-<body>
+<body style="overflow-x:hidden">
   <!--  Body Wrapper -->
   <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
     data-sidebar-position="fixed" data-header-position="fixed">
@@ -57,7 +59,7 @@
         <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
 		  
 		  <ul id="sidebarnav">
-		     <li class="sidebar-item">
+            <li class="sidebar-item">
               <a class="sidebar-link" href="./index.html" aria-expanded="false">
                 <span>
                   <i class="ti ti-timeline-event"></i>
@@ -65,12 +67,12 @@
                 <span class="hide-menu">Site Diagram</span>
               </a>
             </li>
-            <li class="sidebar-item">
+			<li class="sidebar-item active-page">
               <a class="sidebar-link" href="./site-equipment.html" aria-expanded="false">
                 <span>
                   <i class="ti ti-layout-dashboard"></i>
                 </span>
-                <span class="hide-menu">Site Equipment</span>
+                <span>Site Equipment</span>
               </a>
             </li>
 			<li class="sidebar-item indent">
@@ -157,9 +159,12 @@
 	  
 	  <div class="row mb-3">
           <div class="col-lg-6">
-			 <h3>[Device Category]</h3>
+			 <h3>Site Equipment</h3>
             </div>
-		
+		 <div class="col-lg-6">
+			  <a href="alarms.html"> <div class="alarm-pill-high"> <i class="ti ti-alert-triangle"></i>1 High</div></a>
+			   <a href="alarms.html"><div class="alarm-pill"> <i class="ti ti-alert-triangle"></i>2 Critical</div></a>
+          </div>
 	  </div>
         <!--  Row 1 -->
 					
@@ -171,17 +176,21 @@
                     <h6>Status</h6>
                     <div class="row justify-content-center">
 					   <div class="col-4">
-                        <div class="circle-chart"><h2>100% <small class="uom">Online</small></h2></div>
+                        <div class="circle-chart">
+  <div class="circle" id="circle">
+    <div class="inside-circle" id="circle-text">0%</div>
+  </div>
+</div>
 						</div>
 						  <div class="col-4">
 						   <table class="status-table">
 								<tr>
 								  <td><span class="greendot">•</span>Online</td>
-								  <td>45</td>
+								  <td>94</td>
 								</tr>
 								<tr>
 								  <td><span class="reddot">•</span>Offline</td>
-								  <td>0</td>
+								  <td>6</td>
 								</tr>
 								<tr>
 								  <td><span class="yellowdot">•</span>[Another Status]</td>
@@ -189,13 +198,9 @@
 								</tr>
 								
 					   </table>
-					   
-                        
 						</div>
 					  </div>
 					  
-					 
-                     
                     </div>
                   </div>
             </div>
@@ -205,17 +210,16 @@
                 <!-- Yearly Breakup -->
 				<div class="card card-inactive">
                   <div class="card-body p-4">
-                    <h6>Data specific to Device Category here</h6>
+                    <h6>Energy Generation</h6>
 					
                     <div class="row">
 					   <div class="col-4">
-                        <h1>100 <small class="uom">Rupees</small></h1>
-						
+                        <h1>9.67 <small class="uom">MWh</small></h1>
 					  </div>
 					  
 					  <div class="col-8">
                         <div class="d-flex justify-content-center">
-                           <div class="chart-image">
+                          <div class="chart-image">
 						  <img src="assets/images/charts/energy-generation.svg"/>
 						  </div>
                         </div>
@@ -227,18 +231,48 @@
           </div>
 		  
 	
-
-		  
 		</div>
+		<div class="row">
+		<div class="card-grid2">
+        <div class="carda">
+          <h3>Meter</h3><br>
+		  <ul class="equipment"><li>Power</li><li>5.19</li><li>MW</li></ul>
+          <ul class="equipment"><li>Bus Voltage</li><li>19.96</li><li>kV</li></ul>
+		  <ul class="equipment"><li>VAR</li><li>-1.73</li><li>MVAR</li></ul>
+          <ul class="equipment"><li>Power Factor</li><li>0.9</li><li>PF</li></ul>
+        </div>
+		 <div class="carda">
+          <h3>Meteorological</h3><br>
+		  <ul class="equipment"><li>Panel Temperature</li><li>51.44</li><li>°C</li></ul>
+          <ul class="equipment"><li>Global Irradiance</li><li>636.33</li><li>W/m²</li></ul>
+		  <ul class="equipment"><li>POA Irradiance</li><li>1,026.95</li><li>W/m²</li></ul>
+          <ul class="equipment"><li>Wind Speed</li><li>1.70</li><li>mph</li></ul>
+        </div>
+        <div class="carda">
+           <h3>Inverter</h3>
+		  <div class="equipment-emphasis"><h2>20/20 <span>Online</span></h2></div>
+		  <ul class="equipment"><li>Total DC Power</li><li>0.00</li><li>MW</li></ul>
+          <ul class="equipment"><li>Total AC Power</li><li>9.13</li><li>MW</li></ul>
+        </div>
+		<div class="carda">
+           <h3>Alarms</h3>
+		  <div class="equipment-emphasis-alarm-critical"><h2>2 <span>Critical</span></h2><h2 class="alarm-high">1 <span>High</span></h2></div>
+		  <ul class="equipment-alarm"><li><span class="reddot">•</span>Fire Alarm</li><li>8:49:34 AM</li></ul>
+		  <ul class="equipment-alarm"><li><span class="reddot">•</span>Fire Alarm Control Panel Supp...</li><li>8:49:34 AM</li></ul>
+		  <ul class="equipment-alarm"><li><span class="orangedot">•</span>Connection Alarm</li><li>8:49:34 AM</li></ul>
+        </div>
+      </div>
+	  </div>
 
 		  
 	<div class="search-bar">
 	<div class="row-begin">
-      	  <div class="search-container">
+	
+	  <div class="search-container">
 	  <i class="ti ti-search search-icon"></i>
       <input type="text" placeholder="Search...">
 	  </div>
-	  		   <label>
+		   <label>
 		   <div class="dd-button">Device Type <i class="ti ti-chevron-down"></i></div>
 			<input type="checkbox" class="dd-input" id="test">
 			  <ul class="dd-menu">
@@ -249,7 +283,7 @@
 				<li>Tracker</li>
 			  </ul>
 		   </label>
-	   <label>
+			<label>
 			<div>Protocol <i class="ti ti-chevron-down"></i></div>
 			  <input type="checkbox" class="dd-input" id="test">
 			  <ul class="dd-menu">
@@ -260,7 +294,6 @@
 			</label>
     </div>
 	</div>
-	
 	<table class="table">
       <thead>
         <tr>
@@ -278,8 +311,19 @@
       <tbody>
        <tr>
 		  <td>1234456 </td>
-		  <td><div class="device-pill"> <i class="ti ti-gauge"></i>[Device Type]</div></td>
-          <td><strong>Device Name</strong><br><small>Folder X / Subfolder</small></td>
+		  <td><div class="device-pill"> <i class="ti ti-exchange"></i>Inverter</div></td>
+          <td><strong>Inverter 1</strong><br><small>Inverters / Eaton Inverters</small></td>
+          <td>Modbus</td>
+		  <td>0</td>
+		   <td>32567</td>
+		   <td>1234456</td>
+		    <td>0</td>
+          <td><span class="reddot">•</span>Offline <div class="time-pill"><span>PST</span> 11:12am</div><div class="time-pill"><span>UTC</span> 7:12am</div></td>
+        </tr>
+		<tr onclick="window.location='./index_device.html';" style="cursor:pointer;">
+		  <td><div class="alarm-icon"> <i class="ti ti-alert-triangle"></i></div>1234456</td>
+		  <td><div class="device-pill"> <i class="ti ti-exchange"></i>Inverter</div></td>
+          <td><strong>Inverter 2</strong><br><small>Inverters / Eaton Inverters</small></td>
           <td>Modbus</td>
 		  <td>0</td>
 		   <td>32567</td>
@@ -287,10 +331,10 @@
 		    <td>0</td>
           <td><span class="greendot">•</span>Online</td>
         </tr>
-		 <tr>
-		  <td>1234456 </td>
-		  <td><div class="device-pill"> <i class="ti ti-gauge"></i>[Device Type]</div></td>
-          <td><strong>Device Name</strong><br><small>Folder X / Subfolder</small></td>
+		<tr>
+		  <td>1234456</td>
+		  <td><div class="device-pill"> <i class="ti ti-exchange"></i>Inverter</div></td>
+          <td><strong>Inverter 3</strong><br><small>Inverters / Eaton Inverters</small></td>
           <td>Modbus</td>
 		  <td>0</td>
 		   <td>32567</td>
@@ -298,11 +342,32 @@
 		    <td>0</td>
           <td><span class="greendot">•</span>Online</td>
         </tr>
-		
+		<tr>
+		  <td>1234456</td>
+		  <td><div class="device-pill"> <i class="ti ti-exchange"></i>Inverter</div></td>
+          <td><strong>Inverter 4</strong><br><small>Inverters / Eaton Inverters</small></td>
+          <td>Modbus</td>
+		  <td>0</td>
+		   <td>32567</td>
+		   <td>1234456</td>
+		    <td>0</td>
+          <td><span class="greendot">•</span>Online</td>
+        </tr>
+		<tr>
+		  <td>1234456</td>
+		  <td><div class="device-pill"> <i class="ti ti-angle"></i>Tracker</div></td>
+          <td><strong>R-PCS1</strong><br><small>FS Trackers</small></td>
+          <td>Modbus</td>
+		  <td>0</td>
+		   <td>32567</td>
+		   <td>1234456</td>
+		    <td>0</td>
+          <td><span class="greendot">•</span>Online</td>
+        </tr>
 		<tr>
 		  <td>1234456</td>
 		  <td><div class="device-pill">Other</div></td>
-          <td><strong>RTAC-M</strong><br><small>Folder X</small></td>
+          <td><strong>RTAC-M</strong><br><small>Substation</small></td>
           <td>DNP</td>
 		  <td>0</td>
 		   <td>32567</td>
@@ -318,13 +383,38 @@
 	
 </div></div>	
 	
-  <script src="assets/libs/jquery/dist/jquery.min.js"></script>
-  <script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
   <script src="assets/js/sidebarmenu.js"></script>
-  <script src="assets/js/app.min.js"></script>
-  <script src="assets/libs/apexcharts/dist/apexcharts.min.js"></script>
-  <script src="assets/libs/simplebar/dist/simplebar.js"></script>
-  <script src="assets/js/dashboard.js"></script>
+  <script>
+  function animateCircleChart(targetPercent, duration = 1000) {
+    const circle = document.getElementById('circle');
+    const text = document.getElementById('circle-text');
+    let start = null;
+
+    function animate(timestamp) {
+      if (!start) start = timestamp;
+      const elapsed = timestamp - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const currentPercent = Math.floor(progress * targetPercent);
+
+      circle.style.background = `conic-gradient(
+        #7AFFBF 0% ${currentPercent}%,
+        #2b2b2b ${currentPercent}% 100%
+      )`;
+
+      text.textContent = `${currentPercent}%`;
+
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      }
+    }
+
+    requestAnimationFrame(animate);
+  }
+
+  // Start the animation
+  animateCircleChart(94, 1000); // 90% in 1 seconds
+</script>
 </body>
 
 </html>

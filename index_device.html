@@ -8,9 +8,10 @@
   <link rel="shortcut icon" type="image/png" href="assets/images/logos/favicon.png" />
   <link rel="stylesheet" href="assets/css/styles.min.css" />
   <link rel="stylesheet" href="assets/css/sidebar.css" />
+  <link rel="stylesheet" href="assets/css/accordion.css" />
 </head>
 
-<body>
+<body style="overflow-x:hidden;">
   <!--  Body Wrapper -->
   <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
     data-sidebar-position="fixed" data-header-position="fixed">
@@ -58,8 +59,16 @@
         <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
 		  
 		  <ul id="sidebarnav">
-            <li class="sidebar-item">
+		            	<li class="sidebar-item">
               <a class="sidebar-link" href="./index.html" aria-expanded="false">
+                <span>
+                  <i class="ti ti-timeline-event"></i>
+                </span>
+                <span class="hide-menu">Site Diagram</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="./site-equipment.html" aria-expanded="false">
                 <span>
                   <i class="ti ti-layout-dashboard"></i>
                 </span>
@@ -155,16 +164,45 @@
 			 <div class="device-folder"> <i class="ti ti-folder"></i>Inverters / SMA Inverters</div>
             </div>
 		 <div class="col-lg-6">
-			   <a href="alarms.html"><div class="alarm-pill"> <i class="ti ti-alert-triangle"></i>1 Critical</div></a>
+			   <a href="alarms.html"><div class="alarm-pill-medium"> <i class="ti ti-alert-triangle"></i>1 Medium</div></a>
           </div>
 	  </div>
-     
+	  
+	    <div class="row mb-3">
+	<ul class="tab"><li class="active">Overview</li><li>Controls</li></ul>
+	</div>
+	
+     <div id="snackbar">
+    <span><h4>Inverter Major Underperformance</h4>Inverter Performance Index indicates at least a 25% underperformance relative to other inverters on site.<br/><br/>Evaluate active tracker and inverter faults. Check if a combiner / inverter module is off, or if something else such as a tracker or site curtailment is limiting production. Dispatch to site and open outage for capacity derate as necessary.</span>
+    <button class="close-btn" onclick="closeSnackbar()">✖</button>
+  </div>
 			<div class="status-bar mt-3">
       <div>Error Count <h4>0</h4></div>
       <div>Timeouts <h4>20129</h4></div>
       <div>Receive (Rx) <h4>2563015</h4></div>
       <div>Transmit (Tx) <h4>0</h4></div>
     </div>
+	
+		<div class="row">
+		<div class="card-grid3">
+        
+		 <div class="carda">
+          <h3>Power</h3><br>
+						  <img src="assets/images/charts/energy-generation.svg" width="430px" height="100px">
+        </div>
+        <div class="carda">
+           <h3>SMA SC2600</h3>
+		  <div class="equipment-emphasis"><h2>9.16 <span>MW</span></h2></div>
+		  <ul class="equipment"><li>DC Power</li><li>0.00</li><li>MW</li></ul>
+          <ul class="equipment"><li>Efficiency</li><li>0</li><li>%</li></ul>
+        </div>
+		<div class="carda">
+           <h3>Alarms</h3>
+		  <div class="equipment-emphasis-alarm-critical"><h2 class="alarm-medium">1 <span>Medium</span></h2></div>
+		  <ul class="equipment-alarm"><li><span class="yellowdot">•</span>Inverter Major Underperformance</li><li>8:49:34 AM</li></ul>
+        </div>
+      </div>
+	  </div>
 		  
 	<div class="search-bar">
 	<div class="row-begin">
@@ -306,6 +344,11 @@
   <script>
     function toggleSidebar() {
       document.getElementById('sidebar').classList.toggle('open');
+    }
+  </script>
+   <script>
+    function closeSnackbar() {
+      document.getElementById("snackbar").style.display = "none";
     }
   </script>
 </body>

@@ -7,6 +7,7 @@
   <title>Trimark | True:Control</title>
   <link rel="shortcut icon" type="image/png" href="assets/images/logos/favicon.png" />
   <link rel="stylesheet" href="assets/css/styles.min.css" />
+ <link rel="stylesheet" href="assets/css/card-grid.css" />
 </head>
 
 <body>
@@ -52,13 +53,21 @@
     <aside class="left-sidebar">
       <!-- Sidebar scroll-->
       <div>
-        <div class="notification-red2">•</div>
+       <div class="notification-red">•</div>
         <!-- Sidebar navigation-->
         <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
 		  
 		  <ul id="sidebarnav">
-		     <li class="sidebar-item">
+		            	<li class="sidebar-item">
               <a class="sidebar-link" href="./index.html" aria-expanded="false">
+                <span>
+                  <i class="ti ti-timeline-event"></i>
+                </span>
+                <span class="hide-menu">Site Diagram</span>
+              </a>
+            </li>
+		     <li class="sidebar-item">
+              <a class="sidebar-link" href="./site-equipment.html" aria-expanded="false">
                 <span>
                   <i class="ti ti-timeline-event"></i>
                 </span>
@@ -73,31 +82,6 @@
                 <span class="hide-menu">Site Equipment</span>
               </a>
             </li>
-			<li class="sidebar-item indent">
-              <a class="sidebar-link" href="./index_devices.html" aria-expanded="false">
-                <span class="hide-menu">Substation</span>
-              </a>
-            </li>
-			<li class="sidebar-item indent">
-              <a class="sidebar-link" href="./index_devices.html" aria-expanded="false">
-                <span class="hide-menu">Met Data</span>
-              </a>
-            </li>
-			<li class="sidebar-item indent">
-              <a class="sidebar-link" href="./index_devices.html" aria-expanded="false">
-                <span class="hide-menu">Network</span>
-              </a>
-            </li>
-			<li class="sidebar-item indent">
-              <a class="sidebar-link" href="./index_devices.html" aria-expanded="false">
-                <span class="hide-menu">Inverters</span>
-              </a>
-            </li>
-			<li class="sidebar-item indent">
-              <a class="sidebar-link" href="./index_devices.html" aria-expanded="false">
-                <span class="hide-menu">Trackers</span>
-              </a>
-            </li>
             <li class="sidebar-item">
               <a class="sidebar-link" href="./points.html" aria-expanded="false">
                 <span>
@@ -106,7 +90,7 @@
                 <span class="hide-menu">Points</span>
               </a>
             </li>
-            <li class="sidebar-item">
+            <li class="sidebar-item active-page">
               <a class="sidebar-link" href="./alarms.html" aria-expanded="false">
                 <span>
                   <i class="ti ti-alert-triangle"></i>
@@ -157,167 +141,79 @@
 	  
 	  <div class="row mb-3">
           <div class="col-lg-6">
-			 <h3>[Device Category]</h3>
+			 <h3>Alarms</h3>
             </div>
-		
+		 
 	  </div>
         <!--  Row 1 -->
-					
-		<div class="row">
-		 <div class="col-lg-6">
-              
-				 <div class="card overflow-hidden card-inactive">
-                  <div class="card-body p-4">
-                    <h6>Status</h6>
-                    <div class="row justify-content-center">
-					   <div class="col-4">
-                        <div class="circle-chart"><h2>100% <small class="uom">Online</small></h2></div>
-						</div>
-						  <div class="col-4">
-						   <table class="status-table">
-								<tr>
-								  <td><span class="greendot">•</span>Online</td>
-								  <td>45</td>
-								</tr>
-								<tr>
-								  <td><span class="reddot">•</span>Offline</td>
-								  <td>0</td>
-								</tr>
-								<tr>
-								  <td><span class="yellowdot">•</span>[Another Status]</td>
-								  <td>0</td>
-								</tr>
-								
-					   </table>
-					   
-                        
-						</div>
-					  </div>
-					  
-					 
-                     
-                    </div>
-                  </div>
-            </div>
-
-		
-		  		 <div class="col-lg-6">
-                <!-- Yearly Breakup -->
-				<div class="card card-inactive">
-                  <div class="card-body p-4">
-                    <h6>Data specific to Device Category here</h6>
-					
-                    <div class="row">
-					   <div class="col-4">
-                        <h1>100 <small class="uom">Rupees</small></h1>
-						
-					  </div>
-					  
-					  <div class="col-8">
-                        <div class="d-flex justify-content-center">
-                           <div class="chart-image">
-						  <img src="assets/images/charts/energy-generation.svg"/>
-						  </div>
-                        </div>
-                      </div>
-                     
-                    </div>
-                  </div>
-            </div>
-          </div>
-		  
-	
-
-		  
-		</div>
-
-		  
-	<div class="search-bar">
-	<div class="row-begin">
-      	  <div class="search-container">
+	 
+ 
+ <div class="search-bar">
+      <div class="row-begin">
+			  <div class="search-container">
 	  <i class="ti ti-search search-icon"></i>
       <input type="text" placeholder="Search...">
 	  </div>
-	  		   <label>
-		   <div class="dd-button">Device Type <i class="ti ti-chevron-down"></i></div>
+	    	<label>
+		   <div class="dd-button">Today <i class="ti ti-chevron-down"></i></div>
 			<input type="checkbox" class="dd-input" id="test">
 			  <ul class="dd-menu">
-				<li>Inverter</li>
-				<li>Meter</li>
-				<li>Meteorological</li>
-				<li>Other</li>
-				<li>Tracker</li>
+			  	<li style="background:#131313;">Today</li>
+			    <li>Yesterday</li>
+				<li>Last 7 Days</li>
 			  </ul>
 		   </label>
-	   <label>
-			<div>Protocol <i class="ti ti-chevron-down"></i></div>
-			  <input type="checkbox" class="dd-input" id="test">
+		   	<label>
+		   <div class="dd-button">Active <i class="ti ti-chevron-down"></i></div>
+			<input type="checkbox" class="dd-input" id="test">
 			  <ul class="dd-menu">
-				<li>Modbus</li>
-				<li>DNP</li>
-				<li>OPC</li>
+			    <li style="background:#131313;">Active</li>
+				 <li>All</li>
+				<li>Cleared</li>
 			  </ul>
-			</label>
+		   </label>
+		   		 
+		  </div>
+		  <div class="row-end">
+			<div class="right-settings"><i class="ti ti-settings"></i> </div>
+			<div class="right-settings"><i class="ti ti-reload"></i> </div>
+		   </div>
     </div>
+
+ 
+	<div class="grid" id="cardGrid">
+    <div class="card" data-card="1">
+	<div class="card-alarm-pill"> <i class="ti ti-alert-triangle"></i>High</div>
+	<h2>Inverter 1</h2>Inverter Zero Generation
 	</div>
+    <div class="card" data-card="2"><div class="card-alarm-pill"> <i class="ti ti-alert-triangle"></i>High</div>
+	<h2>Inverter 2</h2>Inverter Zero Generation</div>
+    <div class="card" data-card="3"><div class="card-alarm-pill"> <i class="ti ti-alert-triangle"></i>High</div>
+	<h2>Inverter 3</h2>Inverter Zero Generation</div>
+    <div class="card" data-card="4"><div class="card-alarm-pill"> <i class="ti ti-alert-triangle"></i>High</div>
+	<h2>Inverter 4</h2>Inverter Zero Generation</div>
+    <div class="card" data-card="5"><div class="card-alarm-pill"> <i class="ti ti-alert-triangle"></i>High</div>
+	<h2>Inverter 5</h2>Inverter Zero Generation</div>
+    <div class="card" data-card="6"><div class="card-alarm-pill"> <i class="ti ti-alert-triangle"></i>High</div>
+	<h2>Inverter 6</h2>Inverter Zero Generation</div>
+  </div>
+
+  <div class="info-card" id="infoCard">
+    <span class="close-btn" onclick="hideInfo()">×</span>
+    <div id="infoContent">
+	<h1>Test</h1>
+	This is detailed information.
+	</div>
+  </div>
 	
-	<table class="table">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Device Type</th>
-          <th>Device</th>
-          <th>Protocol</th>
-          <th>Error Count</th>
-		  <th>Timeouts</th>
-		  <th>Receive (Rx)</th>
-		  <th>Transmit (Tx)</th>
-		  <th>Connection Status</th>
-        </tr>
-      </thead>
-      <tbody>
-       <tr>
-		  <td>1234456 </td>
-		  <td><div class="device-pill"> <i class="ti ti-gauge"></i>[Device Type]</div></td>
-          <td><strong>Device Name</strong><br><small>Folder X / Subfolder</small></td>
-          <td>Modbus</td>
-		  <td>0</td>
-		   <td>32567</td>
-		   <td>1234456</td>
-		    <td>0</td>
-          <td><span class="greendot">•</span>Online</td>
-        </tr>
-		 <tr>
-		  <td>1234456 </td>
-		  <td><div class="device-pill"> <i class="ti ti-gauge"></i>[Device Type]</div></td>
-          <td><strong>Device Name</strong><br><small>Folder X / Subfolder</small></td>
-          <td>Modbus</td>
-		  <td>0</td>
-		   <td>32567</td>
-		   <td>1234456</td>
-		    <td>0</td>
-          <td><span class="greendot">•</span>Online</td>
-        </tr>
+   
+	
+   
 		
-		<tr>
-		  <td>1234456</td>
-		  <td><div class="device-pill">Other</div></td>
-          <td><strong>RTAC-M</strong><br><small>Folder X</small></td>
-          <td>DNP</td>
-		  <td>0</td>
-		   <td>32567</td>
-		   <td>1234456</td>
-		    <td>0</td>
-          <td><span class="greendot">•</span>Online</td>
-        </tr>
 		
-       
-        <!-- Add more rows here as needed -->
-      </tbody>
-    </table>
-	
-</div></div>	
-	
+      </div>
+    </div>
+  </div>
   <script src="assets/libs/jquery/dist/jquery.min.js"></script>
   <script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/sidebarmenu.js"></script>
@@ -325,6 +221,66 @@
   <script src="assets/libs/apexcharts/dist/apexcharts.min.js"></script>
   <script src="assets/libs/simplebar/dist/simplebar.js"></script>
   <script src="assets/js/dashboard.js"></script>
+  <script>
+    const grid = document.getElementById('cardGrid');
+    const infoCard = document.getElementById('infoCard');
+    const infoContent = document.getElementById('infoContent');
+    let currentCard = null;
+
+  function hideInfo() {
+  infoCard.classList.remove('active');
+  if (infoCard.parentNode) infoCard.remove();
+
+  // Remove active class from all cards
+  document.querySelectorAll('.card.active').forEach(c => c.classList.remove('active'));
+
+  currentCard = null;
+}
+
+function showInfo(card) {
+  const cardId = card.dataset.card;
+  infoContent.innerHTML = `<div class="row"><div class="col-lg-6"><strong>Inverter Zero Generation</strong><br>Inverter is not generating and irradiance is over 100 w/m2. <br><br><strong>Action</strong><br/>Evaluate if inverter has active faults or warnings. Dispatch to site as necessary.</div> <div class="col-lg-2"><strong>Device</strong><br/>Inverter 1 &nbsp<div class="device-model"> <i class="ti ti-bolt"></i>SMA SC2600</div></div>
+  <div class="col-lg-2"><strong>Raised</strong><br/>4/26/25 8:23:54 AM</div>
+  <div class="col-lg-2"><strong>ID</strong><br/>3234534</div>
+  </div>`;
+
+  // Hide previous info card & clear highlight
+  hideInfo();
+
+  // Add highlight to the selected card
+  card.classList.add('active');
+
+  // Calculate where to insert the info card
+  const cards = [...grid.children];
+  const index = cards.indexOf(card);
+  const cols = getComputedStyle(grid).gridTemplateColumns.split(' ').length;
+  const rowEndIndex = Math.min(index - index % cols + cols, cards.length);
+  const lastInRow = cards[rowEndIndex - 1];
+
+  lastInRow.insertAdjacentElement('afterend', infoCard);
+  infoCard.classList.add('active');
+  currentCard = card;
+}
+
+
+    grid.addEventListener('click', e => {
+      const card = e.target.closest('.card');
+      if (!card) return;
+
+      if (card === currentCard) {
+        hideInfo();
+      } else {
+        showInfo(card);
+      }
+    });
+
+    // Optional: Hide when clicking outside
+    document.addEventListener('click', e => {
+      if (!e.target.closest('.card') && !e.target.closest('.info-card')) {
+        hideInfo();
+      }
+    });
+  </script>
 </body>
 
 </html>
