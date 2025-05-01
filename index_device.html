@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="assets/css/styles.min.css" />
   <link rel="stylesheet" href="assets/css/sidebar.css" />
   <link rel="stylesheet" href="assets/css/accordion.css" />
+  	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body style="overflow-x:hidden;">
@@ -159,12 +160,12 @@
 	  
 	  <div class="row mb-3 align-items-center">
           <div class="col-lg-6">
-			 <div class="device-name"><h4>Inverter 1 </h4></div> 
+			 <div class="device-name"><h4>Inverter 1.A.2 </h4></div> 
 			 <div class="device-model"> <i class="ti ti-bolt"></i>SMA SC2600</div>
 			 <div class="device-folder"> <i class="ti ti-folder"></i>Inverters / SMA Inverters</div>
             </div>
 		 <div class="col-lg-6">
-			   <a href="alarms.html"><div class="alarm-pill-medium"> <i class="ti ti-alert-triangle"></i>1 Medium</div></a>
+			   <a href="alarms.html"><div class="alarm-pill-high"> <i class="ti ti-alert-triangle"></i>1 High</div></a>
           </div>
 	  </div>
 	  
@@ -173,36 +174,62 @@
 	</div>
 	
      <div id="snackbar">
-    <span><h4>Inverter Major Underperformance</h4>Inverter Performance Index indicates at least a 25% underperformance relative to other inverters on site.<br/><br/>Evaluate active tracker and inverter faults. Check if a combiner / inverter module is off, or if something else such as a tracker or site curtailment is limiting production. Dispatch to site and open outage for capacity derate as necessary.</span>
-    <button class="close-btn" onclick="closeSnackbar()">✖</button>
+	  <div class="col-lg-10">
+			<h5>Inverter Fault: Insulation Impedance</h5>Action statement here.
+	</div>
+	  <div class="col-lg-2 snackbar-cta">
+	   <a onclick="toggleSidebar2()" style="cursor:pointer;">Details</a>
+	  <button class="close-btn" onclick="closeSnackbar()">✖</button>
+	  </div>
+	
+	
   </div>
-			<div class="status-bar mt-3">
+	<!--
+	<div class="status-bar mt-3">
       <div>Error Count <h4>0</h4></div>
       <div>Timeouts <h4>20129</h4></div>
       <div>Receive (Rx) <h4>2563015</h4></div>
       <div>Transmit (Tx) <h4>0</h4></div>
     </div>
-	
+-->
+
+			
 		<div class="row">
-		<div class="card-grid3">
-        
-		 <div class="carda">
-          <h3>Power</h3><br>
-						  <img src="assets/images/charts/energy-generation.svg" width="430px" height="100px">
+		  
+		  	 <div class="col-lg-4">
+              <div class="card">
+				<div class="carda">
+								  	
+		  <div class="equipment-emphasis"><h2>1,797<span>kW</span></h2></div>
+		  <div class="kw-bar-container">
+								  <div class="kw-bar" style="width: 94%;"></div>
+								</div><br>
+		  <ul class="equipment"><li>Reactive Power</li><li>134.98</li><li>kVAR</li></ul>
+          <ul class="equipment"><li>Power Factor</li><li>1</li><li>PF</li></ul>
+		   <ul class="equipment"><li>Voltage</li><li>637.53</li><li>Volts</li></ul>
+		   <ul class="equipment"><li>Current - Ph A</li><li>1638</li><li>Amps</li></ul>
+		  <ul class="equipment"><li>Current - Ph B</li><li>1638</li><li>Amps</li></ul>
+		  <div class="row mt-4 inverter-stats">
+								 <div class="col-lg-3">Error Count <h4>0</h4></div>
+								  <div class="col-lg-3">Timeouts <h4>322</h4></div>
+								   <div class="col-lg-3">Receive (Rx)<h4>234456</h4></div>
+								    <div class="col-lg-3">Transmit (Tx)<h4>0</h4></div>
+								</div>  
         </div>
-        <div class="carda">
-           <h3>SMA SC2600</h3>
-		  <div class="equipment-emphasis"><h2>9.16 <span>MW</span></h2></div>
-		  <ul class="equipment"><li>DC Power</li><li>0.00</li><li>MW</li></ul>
-          <ul class="equipment"><li>Efficiency</li><li>0</li><li>%</li></ul>
-        </div>
-		<div class="carda">
-           <h3>Alarms</h3>
-		  <div class="equipment-emphasis-alarm-critical"><h2 class="alarm-medium">1 <span>Medium</span></h2></div>
-		  <ul class="equipment-alarm"><li><span class="yellowdot">•</span>Inverter Major Underperformance</li><li>8:49:34 AM</li></ul>
-        </div>
-      </div>
-	  </div>
+
+                  </div>
+            </div>
+		  <div class="col-lg-8">
+                <!-- Yearly Breakup -->
+				<div class="card">
+                    <div class="row">
+                       <div class="chart-container"> <canvas id="energyChart"></canvas></div>
+                  </div>
+            </div>
+          </div>
+		</div>
+		
+		
 		  
 	<div class="search-bar">
 	<div class="row-begin">
@@ -333,7 +360,68 @@
     <div class="field"><label>Point Type</label><input type="text" value="None" readonly></div>
   </div>
 
+	<div class="sidebar-container" id="sidebar2">
+    <div class="sidebar-header">
+ 
+	 <h2>Inverter 1.A.2</h2>
+      <span style="cursor: pointer;" onclick="toggleSidebar2()">✕</span>
+    </div>
+    <div class="sidebar-subtitle">Inverters / Eaton Inverters</div>
+	<div class="device-model"> <i class="ti ti-bolt"></i>SMA SC2600</div>
+<hr>
+<div class="sidebar-subtitle">Alarm</div>  
+   <h4>Inverter Fault</h4>
+   
+<p>Inverter has reported the following fault: (Insulation impedance) </p>
+ <hr>
+ <div class="sidebar-subtitle">Action</div>
+<p>Evaluate active tracker and inverter faults. Check if a combiner / inverter module is off, or if something else such as a tracker or site curtailment is limiting production. Dispatch to site and open outage for capacity derate as necessary.</p>
+
+ <hr>
+  
+  <div class="sidebar-subtitle">Details</div>
+  <div class="field"><label>Device</label><input type="text" value="Inverter 1" readonly></div>
+<div class="field"><label>Severity</label><input type="text" value="High" readonly></div>
+    <div class="field"><label>Raised Date</label><input type="text" id="tenMinutesAgoDate9" readonly></div>
+	<div class="field"><label>Raised Time</label><input type="text" id="tenMinutesAgoTime9" readonly></div>
+    <div class="field"><label>ID</label><input type="text" value="1234234" readonly></div>
+    <div class="field"><label>Status</label><input type="text" value="Online" readonly></div>
 	
+	<div class="accordion">
+  <input type="checkbox" id="section1">
+  <label for="section1">History<i class="ti ti-chevron-down"></i></label>
+  <div class="content">
+    <div class="row">
+	<div class="col-lg-3">19920615</div>
+		<div class="col-lg-3">04/29/2025 06:37 AM</div>
+				<div class="col-lg-3">04/29/2025 06:39 AM</div>
+		<div class="col-lg-3">John Smith</div>
+	</div>
+    <div class="row">
+	<div class="col-lg-3">19920615</div>
+		<div class="col-lg-3">04/29/2025 06:37 AM</div>
+				<div class="col-lg-3">04/29/2025 06:39 AM</div>
+		<div class="col-lg-3">John Smith</div>
+	</div>
+    <div class="row">
+	<div class="col-lg-3">19920615</div>
+		<div class="col-lg-3">04/29/2025 06:37 AM</div>
+				<div class="col-lg-3">04/29/2025 06:39 AM</div>
+		<div class="col-lg-3">John Smith</div>
+	</div>
+    <div class="row">
+	<div class="col-lg-3">19920615</div>
+		<div class="col-lg-3">04/29/2025 06:37 AM</div>
+				<div class="col-lg-3">04/29/2025 06:39 AM</div>
+		<div class="col-lg-3">John Smith</div>
+	</div>
+
+  </div>
+  </div>
+	
+  </div>
+  
+  
   <script src="assets/libs/jquery/dist/jquery.min.js"></script>
   <script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/sidebarmenu.js"></script>
@@ -347,10 +435,105 @@
     }
   </script>
    <script>
+    function toggleSidebar2() {
+      document.getElementById('sidebar2').classList.toggle('open');
+    }
+  </script>
+   <script>
     function closeSnackbar() {
       document.getElementById("snackbar").style.display = "none";
     }
   </script>
+
+
+
+ <script>
+    const ctx = document.getElementById('energyChart').getContext('2d');
+
+    const energyChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['11:16 AM', '11:18 AM', '11:20 AM', '11:22 AM', '11:24 AM'],
+        datasets: [
+          {
+            label: 'kW',
+            data: [1803, 1780, 2000, 1976, 1876],
+			borderColor: 'rgba(73, 164, 239, 1)',
+            yAxisID: 'y',
+          },
+          {
+            label: 'Volts',
+            data: [636, 622, 701, 690, 645],
+            type: 'line',
+            borderColor: 'rgba(255, 191, 60, 1)',
+            fill: true,
+            yAxisID: 'y1',
+          }
+        ]
+      },
+    options: {
+  responsive: true,
+  interaction: {
+    mode: 'index',
+    intersect: false,
+  },
+  stacked: false,
+  plugins: {
+    legend: {
+      labels: {
+        color: 'white' // <-- Legend text color
+      }
+    },
+    title: {
+      display: false
+    }
+  },
+  scales: {
+    y: {
+      type: 'linear',
+      position: 'left',
+      title: {
+        display: true,
+        text: 'kW',
+        color: 'white' // <-- Y-axis title color
+      },
+      ticks: {
+        color: 'white' // <-- Y-axis tick labels
+      },
+      grid: {
+        color: 'rgba(255,255,255,0.1)' // optional: lighter grid lines
+      }
+    },
+    y1: {
+      type: 'linear',
+      position: 'right',
+      title: {
+        display: true,
+        text: 'Volts',
+        color: 'white'
+      },
+      ticks: {
+        color: 'white'
+      },
+      grid: {
+        drawOnChartArea: false
+      }
+    },
+    x: {
+      ticks: {
+        color: 'white' // <-- X-axis tick labels
+      },
+      grid: {
+        color: 'rgba(255,255,255,0.1)'
+      }
+    }
+  }
+}
+
+    });
+  </script>
+  
+
 </body>
 
 </html>

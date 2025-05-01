@@ -9,9 +9,10 @@
   <link rel="stylesheet" href="assets/css/styles.min.css" />
   <link rel="stylesheet" href="assets/css/sidebar.css" />
     <link rel="stylesheet" href="assets/css/accordion.css" />
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
-<body class="dot-grid" style="overflow-y: scroll;">
+<body class="dot-grid">
 
   <!--  Body Wrapper -->
   <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
@@ -157,7 +158,6 @@
 				
 			  </ul>
 		   </label>
-		  <div class="clear"><i class="ti ti-xbox-x"></i> Clear</div>
 		  </div>
 		  <div class="row-end">
 			<div class="right-settings"><i class="ti ti-settings"></i> </div>
@@ -169,60 +169,60 @@
 	
 	<div class="inverter-grid">
 	 <div class="card-grid2">
-		<div class="carda bg-substation" onclick="toggleSidebar()" style="cursor:pointer;">
+		<div class="carda bg-meter" onclick="toggleSidebar()" style="cursor:pointer;">
 		<div class="alarm-pill" style="display:inline-block; margin:0  0 8px 0; float:none;"> <i class="ti ti-alert-triangle"></i>Critical</div>  
-			<div class="diagram-alarm-details"> <h3>Station</h3>
-				<ul class="diagram"><li>Fire Alarm</li></ul>
-				<ul class="diagram-date"><li>4/22/25</li><li>8:48:23 AM</li></ul>
+			<div class="diagram-alarm-details"> <h3>Main Check Meter</h3>
+				<ul class="diagram"><li>POI Voltage - High out of Schedule</li></ul>
+				<ul class="diagram-date"><li> <input type="text" id="tenMinutesAgoDate" readonly></li><li> <input type="text" id="tenMinutesAgoTime" readonly></li></ul>
 			 </div>    
         </div>
 		<div class="carda bg-substation" onclick="toggleSidebar()" style="cursor:pointer;">
 		<div class="alarm-pill" style="display:inline-block; margin:0  0 8px 0; float:none;"> <i class="ti ti-alert-triangle"></i>Critical</div>  
-         <div class="diagram-alarm-details">  <h3>SCADA Enclosure</h3>
-		     <ul class="diagram"><li>Fire Alarm Control Panel Suppression</li></ul>
-			     <ul class="diagram-date"><li>4/22/25</li><li>8:48:23 AM</li></ul>
+         <div class="diagram-alarm-details">  <h3>Pad 4 XFMR</h3>
+		     <ul class="diagram"><li>ISU Transformer Communication Alarm</li></ul>
+				<ul class="diagram-date"><li> <input type="text" id="tenMinutesAgoDate2" readonly></li><li> <input type="text" id="tenMinutesAgoTime2" readonly></li></ul>
 				 </div>
         </div>
 		<div class="carda bg-inverter" onclick="toggleSidebar()" style="cursor:pointer;">
 		<div class="alarm-pill-high" style="display:inline-block; margin:0  0 8px 0; float:none;"> <i class="ti ti-alert-triangle"></i>High</div>  
-         <div class="diagram-alarm-details">   <h3>Connection</h3>
-		     <ul class="diagram"><li>Communication Alarm</li></ul>
-			     <ul class="diagram-date"><li>4/22/25</li><li>8:48:23 AM</li></ul>
+         <div class="diagram-alarm-details">   <h3>Inverter 1.A.2</h3>
+		     <ul class="diagram"><li>Inverter Fault: Insulation Impedance</li></ul>
+				<ul class="diagram-date"><li> <input type="text" id="tenMinutesAgoDate3" readonly></li><li> <input type="text" id="tenMinutesAgoTime3" readonly></li></ul>
 		  </div>
         </div>
-		<div class="carda bg-inverter" onclick="toggleSidebar()" style="cursor:pointer;">
-		<div class="alarm-pill-medium" style="display:inline-block; margin:0  0 8px 0; float:none;"> <i class="ti ti-alert-triangle"></i>Medium</div>  
-         <div class="diagram-alarm-details">   <h3>Inverter 1.3.1</h3>
-		     <ul class="diagram"><li>Inverter Major Underperformance</li></ul>
-			     <ul class="diagram-date"><li>4/22/25</li><li>8:48:23 AM</li></ul>
+		<div class="carda bg-connection" onclick="toggleSidebar()" style="cursor:pointer;">
+		<div class="alarm-pill-high" style="display:inline-block; margin:0  0 8px 0; float:none;"> <i class="ti ti-alert-triangle"></i>High</div>  
+         <div class="diagram-alarm-details">   <h3>Network</h3>
+		     <ul class="diagram"><li>Fiber Loop Alarm</li></ul>
+				<ul class="diagram-date"><li> <input type="text" id="tenMinutesAgoDate4" readonly></li><li> <input type="text" id="tenMinutesAgoTime4" readonly></li></ul>
 		  </div>
         </div>
 		<div class="carda bg-inverter" onclick="toggleSidebar()" style="cursor:pointer;">
 		<div class="alarm-pill-medium" style="display:inline-block; margin:0  0 8px 0; float:none;"> <i class="ti ti-alert-triangle"></i>Medium</div>  
          <div class="diagram-alarm-details">   <h3>Inverter 2.1.1</h3>
 		     <ul class="diagram"><li>Inverter Major Underperformance</li></ul>
-			     <ul class="diagram-date"><li>4/22/25</li><li>8:48:23 AM</li></ul>
+				<ul class="diagram-date"><li> <input type="text" id="tenMinutesAgoDate5" readonly></li><li> <input type="text" id="tenMinutesAgoTime5" readonly></li></ul>
 		  </div>
         </div>
 				<div class="carda bg-inverter" onclick="toggleSidebar()" style="cursor:pointer;">
 		<div class="alarm-pill-medium" style="display:inline-block; margin:0  0 8px 0; float:none;"> <i class="ti ti-alert-triangle"></i>Medium</div>  
          <div class="diagram-alarm-details">   <h3>Inverter 1.11.2</h3>
 		     <ul class="diagram"><li>Inverter Major Underperformance</li></ul>
-			     <ul class="diagram-date"><li>4/22/25</li><li>8:48:23 AM</li></ul>
-		  </div>
-        </div>
-				<div class="carda bg-inverter" onclick="toggleSidebar()" style="cursor:pointer;">
-		<div class="alarm-pill-medium" style="display:inline-block; margin:0  0 8px 0; float:none;"> <i class="ti ti-alert-triangle"></i>Medium</div>  
-         <div class="diagram-alarm-details">   <h3>Inverter 1.2.2</h3>
-		     <ul class="diagram"><li>Inverter Major Underperformance</li></ul>
-			     <ul class="diagram-date"><li>4/22/25</li><li>8:48:23 AM</li></ul>
+				<ul class="diagram-date"><li> <input type="text" id="tenMinutesAgoDate6" readonly></li><li> <input type="text" id="tenMinutesAgoTime6" readonly></li></ul>
 		  </div>
         </div>
 				<div class="carda bg-tracker" onclick="toggleSidebar()" style="cursor:pointer;">
 		<div class="alarm-pill-low" style="display:inline-block; margin:0  0 8px 0; float:none;"> <i class="ti ti-alert-triangle"></i>Low</div>  
          <div class="diagram-alarm-details">   <h3>Tracker - Inverter 1.3.1</h3>
 		     <ul class="diagram"><li>Tracker Alarm</li></ul>
-			     <ul class="diagram-date"><li>4/22/25</li><li>8:48:23 AM</li></ul>
+				<ul class="diagram-date"><li> <input type="text" id="tenMinutesAgoDate8" readonly></li><li> <input type="text" id="tenMinutesAgoTime8" readonly></li></ul>
+		  </div>
+        </div>
+			<div class="carda bg-inverter" onclick="toggleSidebar()" style="cursor:pointer;">
+		<div class="alarm-pill-low" style="display:inline-block; margin:0  0 8px 0; float:none;"> <i class="ti ti-alert-triangle"></i>Low</div>  
+         <div class="diagram-alarm-details">   <h3>Inverter 2.B.2</h3>
+		     <ul class="diagram"><li>Inverter Fault: Aux Supply</li></ul>
+				<ul class="diagram-date"><li> <input type="text" id="tenMinutesAgoDate7" readonly></li><li> <input type="text" id="tenMinutesAgoTime7" readonly></li></ul>
 		  </div>
         </div>
 						
@@ -236,16 +236,16 @@
   <div class="sidebar-container" id="sidebar">
     <div class="sidebar-header">
  
-	 <h2>Inverter 1</h2>
+	 <h2>Inverter 1.A.2</h2>
       <span style="cursor: pointer;" onclick="toggleSidebar()">✕</span>
     </div>
     <div class="sidebar-subtitle">Inverters / Eaton Inverters</div>
 	<div class="device-model"> <i class="ti ti-bolt"></i>SMA SC2600</div>
 <hr>
 <div class="sidebar-subtitle">Alarm</div>  
-   <h4>Inverter Major Underperformance</h4>
+   <h4>Inverter Fault</h4>
    
-<p>Inverter Performance Index indicates at least a 25% underperformance relative to other inverters on site. </p>
+<p>Inverter has reported the following fault: (Insulation impedance) </p>
  <hr>
  <div class="sidebar-subtitle">Action</div>
 <p>Evaluate active tracker and inverter faults. Check if a combiner / inverter module is off, or if something else such as a tracker or site curtailment is limiting production. Dispatch to site and open outage for capacity derate as necessary.</p>
@@ -255,15 +255,44 @@
   <div class="sidebar-subtitle">Details</div>
   <div class="field"><label>Device</label><input type="text" value="Inverter 1" readonly></div>
 <div class="field"><label>Severity</label><input type="text" value="High" readonly></div>
-    <div class="field"><label>Raised</label><input type="text" value="4/26/25 8:23:54 AM" readonly></div>
+    <div class="field"><label>Raised Date</label><input type="text" id="tenMinutesAgoDate9" readonly></div>
+	<div class="field"><label>Raised Time</label><input type="text" id="tenMinutesAgoTime9" readonly></div>
     <div class="field"><label>ID</label><input type="text" value="1234234" readonly></div>
-	<div class="field"><label>Output</label><input type="text" value="0.00 kW" readonly></div>
     <div class="field"><label>Status</label><input type="text" value="Online" readonly></div>
-	<div class="field"><label>Another Data Point</label><input type="text" value="0.00 kW" readonly></div>
 	
-	<div class="chart-image">
-						  <img src="assets/images/charts/energy-generation.svg">
-						  </div>
+    <canvas id="energyChart"></canvas>
+	<div class="accordion">
+  <input type="checkbox" id="section1">
+  <label for="section1">History<i class="ti ti-chevron-down"></i></label>
+  <div class="content">
+    <div class="row">
+	<div class="col-lg-3">19920615</div>
+		<div class="col-lg-3">04/29/2025 06:37 AM</div>
+				<div class="col-lg-3">04/29/2025 06:39 AM</div>
+		<div class="col-lg-3">John Smith</div>
+	</div>
+    <div class="row">
+	<div class="col-lg-3">19920615</div>
+		<div class="col-lg-3">04/29/2025 06:37 AM</div>
+				<div class="col-lg-3">04/29/2025 06:39 AM</div>
+		<div class="col-lg-3">John Smith</div>
+	</div>
+    <div class="row">
+	<div class="col-lg-3">19920615</div>
+		<div class="col-lg-3">04/29/2025 06:37 AM</div>
+				<div class="col-lg-3">04/29/2025 06:39 AM</div>
+		<div class="col-lg-3">John Smith</div>
+	</div>
+    <div class="row">
+	<div class="col-lg-3">19920615</div>
+		<div class="col-lg-3">04/29/2025 06:37 AM</div>
+				<div class="col-lg-3">04/29/2025 06:39 AM</div>
+		<div class="col-lg-3">John Smith</div>
+	</div>
+
+  </div>
+  </div>
+	
   </div>
   
   
@@ -279,6 +308,139 @@
     }
   </script>
   
+ <script>
+    function updateTimeFields() {
+      const now = new Date();
+      const tenMinAgo = new Date(now.getTime() - 10 * 60 * 1000);
+
+      const pad = n => n.toString().padStart(2, '0');
+
+      const formatDate = date => {
+        return `${pad(date.getMonth() + 1)}/${pad(date.getDate())}/${date.getFullYear()}`;
+      };
+
+      const formatTime12Hour = date => {
+        let hours = date.getHours();
+        const minutes = pad(date.getMinutes());
+        const seconds = pad(date.getSeconds());
+        const ampm = hours >= 12 ? 'PM' : 'AM';
+        hours = hours % 12;
+        hours = hours ? hours : 12; // 0 becomes 12
+        return `${pad(hours)}:${minutes}:${seconds} ${ampm} PST`;
+      };
+
+      const formatDateTime = date => {
+        return `${formatDate(date)} ${formatTime12Hour(date)}`;
+      };
+
+      document.getElementById('tenMinutesAgoDate').value = formatDate(tenMinAgo);
+	  document.getElementById('tenMinutesAgoDate2').value = formatDate(tenMinAgo);
+	  document.getElementById('tenMinutesAgoDate3').value = formatDate(tenMinAgo);
+	  document.getElementById('tenMinutesAgoDate4').value = formatDate(tenMinAgo);
+	  document.getElementById('tenMinutesAgoDate5').value = formatDate(tenMinAgo);
+	  document.getElementById('tenMinutesAgoDate6').value = formatDate(tenMinAgo);
+	  document.getElementById('tenMinutesAgoDate7').value = formatDate(tenMinAgo);
+	  document.getElementById('tenMinutesAgoDate8').value = formatDate(tenMinAgo);
+	  document.getElementById('tenMinutesAgoDate9').value = formatDate(tenMinAgo);
+      document.getElementById('tenMinutesAgoTime').value = formatTime12Hour(tenMinAgo);
+	  document.getElementById('tenMinutesAgoTime2').value = formatTime12Hour(tenMinAgo);
+	  document.getElementById('tenMinutesAgoTime3').value = formatTime12Hour(tenMinAgo);
+	  document.getElementById('tenMinutesAgoTime4').value = formatTime12Hour(tenMinAgo);
+	  document.getElementById('tenMinutesAgoTime5').value = formatTime12Hour(tenMinAgo);
+	  document.getElementById('tenMinutesAgoTime6').value = formatTime12Hour(tenMinAgo);
+	  document.getElementById('tenMinutesAgoTime7').value = formatTime12Hour(tenMinAgo);
+	  document.getElementById('tenMinutesAgoTime8').value = formatTime12Hour(tenMinAgo);
+	  document.getElementById('tenMinutesAgoTime9').value = formatTime12Hour(tenMinAgo);
+    }
+
+    updateTimeFields();
+  </script>
+  <script>
+    const ctx = document.getElementById('energyChart').getContext('2d');
+
+    const energyChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['6AM', '9AM', '12PM', '3PM', '6PM'],
+        datasets: [
+          {
+            label: 'Generation (kWh)',
+            data: [0, 50, 120, 100, 30],
+            backgroundColor: 'rgba(73, 164, 239, 0.6)',
+            yAxisID: 'y',
+          },
+          {
+            label: 'Irradiance (W/m²)',
+            data: [0, 200, 800, 700, 150],
+            type: 'line',
+            borderColor: 'rgba(255, 191, 60, 1)',
+            backgroundColor: 'rgba(77, 66, 43, 0.2)',
+            fill: true,
+            yAxisID: 'y1',
+          }
+        ]
+      },
+    options: {
+  responsive: true,
+  interaction: {
+    mode: 'index',
+    intersect: false,
+  },
+  stacked: false,
+  plugins: {
+    legend: {
+      labels: {
+        color: 'white' // <-- Legend text color
+      }
+    },
+    title: {
+      display: false
+    }
+  },
+  scales: {
+    y: {
+      type: 'linear',
+      position: 'left',
+      title: {
+        display: true,
+        text: 'Generation (kWh)',
+        color: 'white' // <-- Y-axis title color
+      },
+      ticks: {
+        color: 'white' // <-- Y-axis tick labels
+      },
+      grid: {
+        color: 'rgba(255,255,255,0.1)' // optional: lighter grid lines
+      }
+    },
+    y1: {
+      type: 'linear',
+      position: 'right',
+      title: {
+        display: true,
+        text: 'Irradiance (W/m²)',
+        color: 'white'
+      },
+      ticks: {
+        color: 'white'
+      },
+      grid: {
+        drawOnChartArea: false
+      }
+    },
+    x: {
+      ticks: {
+        color: 'white' // <-- X-axis tick labels
+      },
+      grid: {
+        color: 'rgba(255,255,255,0.1)'
+      }
+    }
+  }
+}
+
+    });
+  </script>
 </body>
 
 </html>

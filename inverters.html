@@ -1,0 +1,758 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trimark | True:Control</title>
+  <link rel="shortcut icon" type="image/png" href="assets/images/logos/favicon.png" />
+  <link rel="stylesheet" href="assets/css/styles.min.css" />
+  <link rel="stylesheet" href="assets/css/sidebar.css" />
+  <link rel="stylesheet" href="assets/css/accordion.css" />
+  	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body style="overflow-x:hidden;">
+  <!--  Body Wrapper -->
+  <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+    data-sidebar-position="fixed" data-header-position="fixed">
+	
+	<header class="app-header">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <ul class="navbar-nav">
+            <li class="nav-item d-block d-xl-none">
+              <a class="nav-link sidebartoggler nav-icon-hover" id="headerCollapse" href="javascript:void(0)">
+                <i class="ti ti-menu-2"></i>
+              </a>
+            </li>
+            <li class="site-title">
+			 Site Name
+            </li>
+			   
+          </ul>
+		 
+          <div class="navbar-collapse justify-content-end px-0" id="navbarNav">
+            <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-end">
+               <li>
+				<div class="weather">
+					<ul><li>PST 3:33 PM</li><li>UTC 9:50 PM</li><li>82° F Sunny <i class="ti ti-sun"></i></li></ul>
+				</div>
+				</li>
+              <li class="nav-item dropdown">
+                <a class="nav-link nav-icon-hover" href="javascript:void(0)" id="drop2" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                 <div class="avatar-initial">J</div>
+                </a>
+               
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+	  
+	  
+    <!-- Sidebar Start -->
+    <aside class="left-sidebar">
+      <!-- Sidebar scroll-->
+      <div>
+       <div class="notification-red2">•</div>
+        <!-- Sidebar navigation-->
+        <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
+		  
+		  <ul id="sidebarnav">
+		            	<li class="sidebar-item">
+              <a class="sidebar-link" href="./index.html" aria-expanded="false">
+                <span>
+                  <i class="ti ti-timeline-event"></i>
+                </span>
+                <span class="hide-menu">Site Diagram</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="./site-equipment.html" aria-expanded="false">
+                <span>
+                  <i class="ti ti-layout-dashboard"></i>
+                </span>
+                <span class="hide-menu">Site Equipment</span>
+              </a>
+            </li>
+			<li class="sidebar-item indent">
+              <a class="sidebar-link" href="./index_devices.html" aria-expanded="false">
+                <span class="hide-menu">Substation</span>
+              </a>
+            </li>
+			<li class="sidebar-item indent">
+              <a class="sidebar-link" href="./index_devices.html" aria-expanded="false">
+                <span class="hide-menu">Met Data</span>
+              </a>
+            </li>
+			<li class="sidebar-item indent">
+              <a class="sidebar-link" href="./index_devices.html" aria-expanded="false">
+                <span class="hide-menu">Network</span>
+              </a>
+            </li>
+			<li class="sidebar-item indent active-page">
+              <a class="sidebar-link" href="./index_devices.html" aria-expanded="false">
+                <span class="hide-menu">Inverters</span>
+              </a>
+            </li>
+			<li class="sidebar-item indent">
+              <a class="sidebar-link" href="./index.html" aria-expanded="false">
+                <span class="hide-menu">Trackers</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="./points.html" aria-expanded="false">
+                <span>
+                  <i class="ti ti-hierarchy-2"></i>
+                </span>
+                <span class="hide-menu">Points</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="./alarms.html" aria-expanded="false">
+                <span>
+                  <i class="ti ti-alert-triangle"></i>
+                </span>
+                <span class="hide-menu">Alarms</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="./controls.html" aria-expanded="false">
+                <span>
+                  <i class="ti ti-adjustments"></i>
+                </span>
+                <span class="hide-menu">Controls</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="./trends.html" aria-expanded="false">
+                <span>
+                  <i class="ti ti-chart-line"></i>
+                </span>
+                <span class="hide-menu">Trends</span>
+              </a>
+            </li>
+			<li class="sidebar-item">
+              <a class="sidebar-link" href="./logs.html" aria-expanded="false">
+                <span>
+                  <i class="ti ti-list"></i>
+                </span>
+                <span class="hide-menu">Logs</span>
+              </a>
+            </li>
+          </ul>
+         
+        </nav>
+        <!-- End Sidebar navigation -->
+      </div>
+      <!-- End Sidebar scroll-->
+    </aside>
+    <!--  Sidebar End -->
+    <!--  Main wrapper -->
+    <div class="body-wrapper">
+      <!--  Header Start -->
+      
+	  
+      <!--  Header End -->
+      <div class="container-fluid">
+	  
+	  
+	  <div class="row mb-3 align-items-center">
+          <div class="col-lg-6">
+			 <div class="device-name"><h4>Inverters </h4></div> 
+            </div>
+	
+	  </div>
+	  
+	    <div class="row mb-3">
+	<ul class="tab"><li class="active">Overview</li><li>Controls</li></ul>
+	</div>
+	
+	<div class="status-bar mt-3">
+			<div class="circle-chart">
+			  <div class="circle" id="circle">
+				<div class="inside-circle" id="circle-text">0</div><span>MW<i>DC</i></span>
+			  </div>
+			</div>
+						<div class="circle-chart">
+			  <div class="circle" id="circle2">
+				<div class="inside-circle" id="circle-text2">0</div><span>MW<i>AC</i></span>
+			  </div>
+			</div>
+						<div class="circle-chart">
+			  <div class="circle" id="circle3">
+				<div class="inside-circle" id="circle-text3">0</div><span>Efficiency</span>
+			  </div>
+			</div>
+     
+    </div>
+
+
+			
+		<div class="row">
+		  			<div class="col-md-3">
+              <div class="card">
+                  <div class="card-body bar-chart">
+							 <div class="inverter-card">
+								<div class="inverter-header">
+								  <div class="inverter-title">
+									<div class="status-dot"></div>
+									<h2>Inverter 1.A.1</h2>
+								  </div>
+								</div>
+								<div class="kw-bar-container">
+								  <div class="kw-bar" style="width: 90%;"></div>
+								</div>
+								<div class="kw-value">3,201 <span>kW</span></div> <!-- Display current kW -->
+							  </div>	
+                    </div>
+                  </div>
+            </div>
+		  	 <div class="col-md-3">
+              <div class="card" onclick="toggleSidebar()" style="cursor:pointer;">
+                  <div class="card-body bar-chart">
+							 <div class="inverter-card">
+								<div class="inverter-header">
+								  <div class="inverter-title">
+									<div class="status-dot"></div>
+									<h2>Inverter 1.A.2</h2>
+								  </div>
+								  <div class="inverter-alarm">
+									<div class="alarm-pill-high"> <i class="ti ti-alert-triangle"></i>High</div>
+								  </div>
+								</div>
+
+								<div class="kw-bar-container">
+								  <div class="kw-bar" style="width: 89%;"></div>
+								</div>
+
+								<div class="kw-value">3,132 <span>kW</span></div> <!-- Display current kW -->
+							  </div>						
+						  
+                    </div>
+                  </div>
+            </div>
+			<div class="col-md-3">
+              <div class="card">
+                  <div class="card-body bar-chart">
+							 <div class="inverter-card">
+								<div class="inverter-header">
+								  <div class="inverter-title">
+									<div class="status-dot"></div>
+									<h2>Inverter 1.A.3</h2>
+								  </div>
+								</div>
+								<div class="kw-bar-container">
+								  <div class="kw-bar" style="width: 94%;"></div>
+								</div>
+								<div class="kw-value">3,258 <span>kW</span></div> <!-- Display current kW -->
+							  </div>	
+                    </div>
+                  </div>
+            </div>
+			<div class="col-md-3">
+              <div class="card">
+                  <div class="card-body bar-chart">
+							 <div class="inverter-card">
+								<div class="inverter-header">
+								  <div class="inverter-title">
+									<div class="status-dot"></div>
+									<h2>Inverter 1.A.3</h2>
+								  </div>
+								</div>
+								<div class="kw-bar-container">
+								  <div class="kw-bar" style="width: 84%;"></div>
+								</div>
+								<div class="kw-value">2,848 <span>kW</span></div> <!-- Display current kW -->
+							  </div>	
+                    </div>
+                  </div>
+            </div>
+			<div class="col-md-3">
+              <div class="card">
+                  <div class="card-body bar-chart">
+							 <div class="inverter-card">
+								<div class="inverter-header">
+								  <div class="inverter-title">
+									<div class="status-dot"></div>
+									<h2>Inverter 1.A.4</h2>
+								  </div>
+								</div>
+								<div class="kw-bar-container">
+								  <div class="kw-bar" style="width: 88%;"></div>
+								</div>
+								<div class="kw-value">3,041 <span>kW</span></div> <!-- Display current kW -->
+							  </div>	
+                    </div>
+                  </div>
+            </div>
+						<div class="col-md-3">
+              <div class="card">
+                  <div class="card-body bar-chart">
+							 <div class="inverter-card">
+								<div class="inverter-header">
+								  <div class="inverter-title">
+									<div class="status-dot"></div>
+									<h2>Inverter 1.A.5</h2>
+								  </div>
+								</div>
+								<div class="kw-bar-container">
+								  <div class="kw-bar" style="width: 88%;"></div>
+								</div>
+								<div class="kw-value">3,041 <span>kW</span></div> <!-- Display current kW -->
+							  </div>	
+                    </div>
+                  </div>
+            </div>
+						<div class="col-md-3">
+              <div class="card">
+                  <div class="card-body bar-chart">
+							 <div class="inverter-card">
+								<div class="inverter-header">
+								  <div class="inverter-title">
+									<div class="status-dot"></div>
+									<h2>Inverter 1.A.6</h2>
+								  </div>
+								</div>
+								<div class="kw-bar-container">
+								  <div class="kw-bar" style="width: 88%;"></div>
+								</div>
+								<div class="kw-value">3,041 <span>kW</span></div> <!-- Display current kW -->
+							  </div>	
+                    </div>
+                  </div>
+            </div>
+						<div class="col-md-3">
+              <div class="card">
+                  <div class="card-body bar-chart">
+							 <div class="inverter-card">
+								<div class="inverter-header">
+								  <div class="inverter-title">
+									<div class="status-dot"></div>
+									<h2>Inverter 1.A.7</h2>
+								  </div>
+								</div>
+								<div class="kw-bar-container">
+								  <div class="kw-bar" style="width: 88%;"></div>
+								</div>
+								<div class="kw-value">3,041 <span>kW</span></div> <!-- Display current kW -->
+							  </div>	
+                    </div>
+                  </div>
+            </div>
+						<div class="col-md-3">
+              <div class="card">
+                  <div class="card-body bar-chart">
+							 <div class="inverter-card">
+								<div class="inverter-header">
+								  <div class="inverter-title">
+									<div class="status-dot"></div>
+									<h2>Inverter 1.A.8</h2>
+								  </div>
+								</div>
+								<div class="kw-bar-container">
+								  <div class="kw-bar" style="width: 88%;"></div>
+								</div>
+								<div class="kw-value">3,041 <span>kW</span></div> <!-- Display current kW -->
+							  </div>	
+                    </div>
+                  </div>
+            </div>
+						<div class="col-md-3">
+              <div class="card">
+                  <div class="card-body bar-chart">
+							 <div class="inverter-card">
+								<div class="inverter-header">
+								  <div class="inverter-title">
+									<div class="status-dot"></div>
+									<h2>Inverter 1.B.1</h2>
+								  </div>
+								</div>
+								<div class="kw-bar-container">
+								  <div class="kw-bar" style="width: 88%;"></div>
+								</div>
+								<div class="kw-value">3,041 <span>kW</span></div> <!-- Display current kW -->
+							  </div>	
+                    </div>
+                  </div>
+            </div>
+			 <div class="col-md-3">
+              <div class="card">
+                  <div class="card-body bar-chart">
+							 <div class="inverter-card">
+								<div class="inverter-header">
+								  <div class="inverter-title">
+									<div class="status-dot"></div>
+									<h2>Inverter 1.B.2</h2>
+								  </div>
+								</div>
+								<div class="kw-bar-container">
+								  <div class="kw-bar" style="width: 88%;"></div>
+								</div>
+								<div class="kw-value">3,041 <span>kW</span></div> <!-- Display current kW -->
+							  </div>	
+                    </div>
+                  </div>
+            </div>
+			 <div class="col-md-3">
+              <div class="card">
+                  <div class="card-body bar-chart">
+							 <div class="inverter-card">
+								<div class="inverter-header">
+								  <div class="inverter-title">
+									<div class="status-dot"></div>
+									<h2>Inverter 1.B.3</h2>
+								  </div>
+								</div>
+								<div class="kw-bar-container">
+								  <div class="kw-bar" style="width: 88%;"></div>
+								</div>
+								<div class="kw-value">3,041 <span>kW</span></div> <!-- Display current kW -->
+							  </div>	
+                    </div>
+                  </div>
+            </div>
+			 <div class="col-md-3">
+              <div class="card">
+                  <div class="card-body bar-chart">
+							 <div class="inverter-card">
+								<div class="inverter-header">
+								  <div class="inverter-title">
+									<div class="status-dot"></div>
+									<h2>Inverter 1.B.4</h2>
+								  </div>
+								</div>
+								<div class="kw-bar-container">
+								  <div class="kw-bar" style="width: 88%;"></div>
+								</div>
+								<div class="kw-value">3,041 <span>kW</span></div> <!-- Display current kW -->
+							  </div>	
+                    </div>
+                  </div>
+            </div>
+			 <div class="col-md-3">
+              <div class="card">
+                  <div class="card-body bar-chart">
+							 <div class="inverter-card">
+								<div class="inverter-header">
+								  <div class="inverter-title">
+									<div class="status-dot"></div>
+									<h2>Inverter 1.B.5</h2>
+								  </div>
+								</div>
+								<div class="kw-bar-container">
+								  <div class="kw-bar" style="width: 88%;"></div>
+								</div>
+								<div class="kw-value">3,041 <span>kW</span></div> <!-- Display current kW -->
+							  </div>	
+                    </div>
+                  </div>
+            </div>
+		 <div class="col-md-3">
+              <div class="card">
+                  <div class="card-body bar-chart">
+							 <div class="inverter-card">
+								<div class="inverter-header">
+								  <div class="inverter-title">
+									<div class="status-dot"></div>
+									<h2>Inverter 1.B.6</h2>
+								  </div>
+								</div>
+								<div class="kw-bar-container">
+								  <div class="kw-bar" style="width: 88%;"></div>
+								</div>
+								<div class="kw-value">3,041 <span>kW</span></div> <!-- Display current kW -->
+							  </div>	
+                    </div>
+                  </div>
+            </div>
+			<div class="col-md-3">
+              <div class="card">
+                  <div class="card-body bar-chart">
+							 <div class="inverter-card">
+								<div class="inverter-header">
+								  <div class="inverter-title">
+									<div class="status-dot"></div>
+									<h2>Inverter 1.B.7</h2>
+								  </div>
+								</div>
+								<div class="kw-bar-container">
+								  <div class="kw-bar" style="width: 88%;"></div>
+								</div>
+								<div class="kw-value">3,041 <span>kW</span></div> <!-- Display current kW -->
+							  </div>	
+                    </div>
+                  </div>
+            </div>
+			<div class="col-md-3">
+              <div class="card">
+                  <div class="card-body bar-chart">
+							 <div class="inverter-card">
+								<div class="inverter-header">
+								  <div class="inverter-title">
+									<div class="status-dot"></div>
+									<h2>Inverter 1.B.8</h2>
+								  </div>
+								</div>
+								<div class="kw-bar-container">
+								  <div class="kw-bar" style="width: 88%;"></div>
+								</div>
+								<div class="kw-value">3,041 <span>kW</span></div> <!-- Display current kW -->
+							  </div>	
+                    </div>
+                  </div>
+            </div>
+		</div>
+		
+	
+	<div class="sidebar-container" id="sidebar">
+    <div class="sidebar-header">
+ 
+	 <h2>Inverter 1.A.2</h2>
+      <span style="cursor: pointer;" onclick="toggleSidebar()">✕</span>
+    </div>
+    <div class="sidebar-subtitle">Inverters / Eaton Inverters</div>
+	<div class="device-model"> <i class="ti ti-bolt"></i>SMA SC2600</div>
+<hr>
+<div class="sidebar-subtitle">Alarm</div>  
+   <h4>Inverter Fault</h4>
+   
+<p>Inverter has reported the following fault: (Insulation impedance) </p>
+ <hr>
+ <div class="sidebar-subtitle">Action</div>
+<p>Evaluate active tracker and inverter faults. Check if a combiner / inverter module is off, or if something else such as a tracker or site curtailment is limiting production. Dispatch to site and open outage for capacity derate as necessary.</p>
+
+ <hr>
+  
+  <div class="sidebar-subtitle">Details</div>
+  <div class="field"><label>Device</label><input type="text" value="Inverter 1" readonly></div>
+<div class="field"><label>Severity</label><input type="text" value="High" readonly></div>
+    <div class="field"><label>Raised Date</label><input type="text" id="tenMinutesAgoDate9" readonly></div>
+	<div class="field"><label>Raised Time</label><input type="text" id="tenMinutesAgoTime9" readonly></div>
+    <div class="field"><label>ID</label><input type="text" value="1234234" readonly></div>
+    <div class="field"><label>Status</label><input type="text" value="Online" readonly></div>
+	
+    <canvas id="energyChart"></canvas>
+	<div class="accordion">
+  <input type="checkbox" id="section1">
+  <label for="section1">History<i class="ti ti-chevron-down"></i></label>
+  <div class="content">
+    <div class="row">
+	<div class="col-lg-3">19920615</div>
+		<div class="col-lg-3">04/29/2025 06:37 AM</div>
+				<div class="col-lg-3">04/29/2025 06:39 AM</div>
+		<div class="col-lg-3">John Smith</div>
+	</div>
+    <div class="row">
+	<div class="col-lg-3">19920615</div>
+		<div class="col-lg-3">04/29/2025 06:37 AM</div>
+				<div class="col-lg-3">04/29/2025 06:39 AM</div>
+		<div class="col-lg-3">John Smith</div>
+	</div>
+    <div class="row">
+	<div class="col-lg-3">19920615</div>
+		<div class="col-lg-3">04/29/2025 06:37 AM</div>
+				<div class="col-lg-3">04/29/2025 06:39 AM</div>
+		<div class="col-lg-3">John Smith</div>
+	</div>
+    <div class="row">
+	<div class="col-lg-3">19920615</div>
+		<div class="col-lg-3">04/29/2025 06:37 AM</div>
+				<div class="col-lg-3">04/29/2025 06:39 AM</div>
+		<div class="col-lg-3">John Smith</div>
+	</div>
+
+  </div>
+  </div>
+	
+  </div>
+	
+	
+</div></div>	
+  <script>
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+    }
+  </script>
+ <script>
+  function animateCircleChart(targetPercent, duration = 1000) {
+    const circle = document.getElementById('circle');
+    const text = document.getElementById('circle-text');
+    let start = null;
+
+    function animate(timestamp) {
+      if (!start) start = timestamp;
+      const elapsed = timestamp - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const currentPercent = Math.floor(progress * targetPercent);
+
+      circle.style.background = `conic-gradient(
+        #49A4EF 0% ${currentPercent}%,
+        #2b2b2b ${currentPercent}% 100%
+      )`;
+
+      text.textContent = `206.9`;
+
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      }
+    }
+
+    requestAnimationFrame(animate);
+  }
+
+  // Start the animation
+  animateCircleChart(90, 500); // 90% in 1 seconds
+</script>
+
+ <script>
+  function animateCircleChart(targetPercent, duration = 1000) {
+    const circle = document.getElementById('circle2');
+    const text = document.getElementById('circle-text2');
+    let start = null;
+
+    function animate(timestamp) {
+      if (!start) start = timestamp;
+      const elapsed = timestamp - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const currentPercent = Math.floor(progress * targetPercent);
+
+      circle.style.background = `conic-gradient(
+        #0071CE 0% ${currentPercent}%,
+        #2b2b2b ${currentPercent}% 100%
+      )`;
+
+      text.textContent = `203.6`;
+
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      }
+    }
+
+    requestAnimationFrame(animate);
+  }
+
+  // Start the animation
+  animateCircleChart(100, 500); // 90% in 1 seconds
+</script>
+
+ <script>
+  function animateCircleChart(targetPercent, duration = 1000) {
+    const circle = document.getElementById('circle3');
+    const text = document.getElementById('circle-text3');
+    let start = null;
+
+    function animate(timestamp) {
+      if (!start) start = timestamp;
+      const elapsed = timestamp - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const currentPercent = Math.floor(progress * targetPercent);
+
+      circle.style.background = `conic-gradient(
+        #7AFFBF 0% ${currentPercent}%,
+        #2b2b2b ${currentPercent}% 100%
+      )`;
+
+      text.textContent = `98.2`;
+
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      }
+    }
+
+    requestAnimationFrame(animate);
+  }
+
+  // Start the animation
+  animateCircleChart(98, 500); // 90% in 1 seconds
+</script>
+<script>
+    const ctx = document.getElementById('energyChart').getContext('2d');
+
+    const energyChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['6AM', '9AM', '12PM', '3PM', '6PM'],
+        datasets: [
+          {
+            label: 'Generation (kWh)',
+            data: [0, 50, 120, 100, 30],
+            backgroundColor: 'rgba(73, 164, 239, 0.6)',
+            yAxisID: 'y',
+          },
+          {
+            label: 'Irradiance (W/m²)',
+            data: [0, 200, 800, 700, 150],
+            type: 'line',
+            borderColor: 'rgba(255, 191, 60, 1)',
+            backgroundColor: 'rgba(77, 66, 43, 0.2)',
+            fill: true,
+            yAxisID: 'y1',
+          }
+        ]
+      },
+    options: {
+  responsive: true,
+  interaction: {
+    mode: 'index',
+    intersect: false,
+  },
+  stacked: false,
+  plugins: {
+    legend: {
+      labels: {
+        color: 'white' // <-- Legend text color
+      }
+    },
+    title: {
+      display: false
+    }
+  },
+  scales: {
+    y: {
+      type: 'linear',
+      position: 'left',
+      title: {
+        display: true,
+        text: 'Generation (kWh)',
+        color: 'white' // <-- Y-axis title color
+      },
+      ticks: {
+        color: 'white' // <-- Y-axis tick labels
+      },
+      grid: {
+        color: 'rgba(255,255,255,0.1)' // optional: lighter grid lines
+      }
+    },
+    y1: {
+      type: 'linear',
+      position: 'right',
+      title: {
+        display: true,
+        text: 'Irradiance (W/m²)',
+        color: 'white'
+      },
+      ticks: {
+        color: 'white'
+      },
+      grid: {
+        drawOnChartArea: false
+      }
+    },
+    x: {
+      ticks: {
+        color: 'white' // <-- X-axis tick labels
+      },
+      grid: {
+        color: 'rgba(255,255,255,0.1)'
+      }
+    }
+  }
+}
+
+    });
+  </script>
+</body>
+
+</html>
