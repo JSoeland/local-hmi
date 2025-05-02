@@ -52,13 +52,15 @@
     }
 
     .realtime-value {
-      font-size: 2em;
+      font-size: 2.4em;
       font-weight: bold;
     }
 
     .unit {
-      font-size: 0.8em;
       color: #aaa;
+	  font-weight:500;
+	  font-size:14px;
+	  display:block;
     }
 
     hr {
@@ -89,3 +91,4 @@
       border-radius: 5px;
       text-align: right;
     }
+	
