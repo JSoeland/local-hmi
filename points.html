@@ -366,27 +366,52 @@
       <span style="cursor: pointer;" onclick="toggleSidebar()">✕</span>
     </div>
     <div class="sidebar-subtitle">Server / Dataset Name</div>
+	<table class="table">
+	<tr>
+	<td>
+	<div class="row">
+	<div class="col-lg-4">
+	<span class="greendot">•</span>Online</div>
+	<div class="col-lg-3">Engineering<br><h2>56</h2></div>
+	<div class="col-lg-3">Raw Value<br><h2>56</h2></div></div>
+	</td>
+	</tr>
+	<tr><td><a href="">Force Value</a></td></tr>
 
-    <div class="realtime-box">
-      <div class="time-row">
-        <span>PST 1:50pm</span>
-        <span>UTC 9:50pm </span>
-      </div>
-      <div class="realtime-value">56<span class="unit">%</span></div>
-    </div>
+	</table>
 
+    <table class="table">
+	
+	<tr>
+	<td>   <div class="row"><div class="col-lg-4">Last Change</div>
+	<div class="col-lg-2"><input type="text" id="tenMinutesAgoDate" readonly></div>
+<div class="col-lg-4"><input type="text" id="tenMinutesAgoTime" readonly> </div>
+</div>
+</td>
+</tr>
+<tr>
+	<td>   <div class="row"><div class="col-lg-4">Last Reading</div>
+	<div class="col-lg-2"><input type="text" id="tenMinutesAgoDate2" readonly></div>
+<div class="col-lg-4"><input type="text" id="tenMinutesAgoTime2" readonly> </div>
+</div>
+</td>
+</tr>
+
+	</table>
+
+		
     <hr>
     <div class="sidebar-subtitle">Point Details</div>
 
     <div class="field"><label>Modbus Register</label><input type="text" value="30009" readonly></div>
     <div class="field"><label>Object Type</label><input type="text" value="Modbus Input Register" readonly></div>
     <div class="field"><label>Data Type</label><input type="text" value="Int32" readonly></div>
-    <div class="field"><label>Unit of Measure</label><input type="text" value="Amps" readonly></div>
+    <div class="field"><label>Unit of Measure</label><input type="text" value="Counts" readonly></div>
     <div class="field"><label>Scaling</label><input type="text" value="Eng" readonly></div>
-    <div class="field"><label>Engineering Min</label><input type="text" value="-7000" readonly></div>
-    <div class="field"><label>Engineering Max</label><input type="text" value="7000" readonly></div>
+    <div class="field"><label>Engineering Min</label><input type="text" value="-0" readonly></div>
+    <div class="field"><label>Engineering Max</label><input type="text" value="100" readonly></div>
     <div class="field"><label>Conversion Factor</label><input type="text" value="1" readonly></div>
-    <div class="field"><label>Significant Digits</label><input type="text" value="2" readonly></div>
+    <div class="field"><label>Significant Digits</label><input type="text" value="3" readonly></div>
     <div class="field"><label>Conversion Offset</label><input type="text" value="0" readonly></div>
     <div class="field"><label>Deadband</label><input type="text" value="0" readonly></div>
     <div class="field"><label>Negate</label><input type="text" value="Disabled" readonly></div>
@@ -427,6 +452,40 @@
     }
 
     updateTime();
+  </script>
+  
+   <script>
+    function updateTimeFields() {
+      const now = new Date();
+      const tenMinAgo = new Date(now.getTime() - 10 * 60 * 1000);
+
+      const pad = n => n.toString().padStart(2, '0');
+
+      const formatDate = date => {
+        return `${pad(date.getMonth() + 1)}/${pad(date.getDate())}/${date.getFullYear()}`;
+      };
+
+      const formatTime12Hour = date => {
+        let hours = date.getHours();
+        const minutes = pad(date.getMinutes());
+        const seconds = pad(date.getSeconds());
+        const ampm = hours >= 12 ? 'PM' : 'AM';
+        hours = hours % 12;
+        hours = hours ? hours : 12; // 0 becomes 12
+        return `${pad(hours)}:${minutes}:${seconds} ${ampm} PST`;
+      };
+
+      const formatDateTime = date => {
+        return `${formatDate(date)} ${formatTime12Hour(date)}`;
+      };
+
+      document.getElementById('tenMinutesAgoDate').value = formatDate(tenMinAgo);
+	  document.getElementById('tenMinutesAgoDate2').value = formatDate(tenMinAgo);
+      document.getElementById('tenMinutesAgoTime').value = formatTime12Hour(tenMinAgo);
+	  document.getElementById('tenMinutesAgoTime2').value = formatTime12Hour(tenMinAgo);
+    }
+
+    updateTimeFields();
   </script>
 </body>
 
