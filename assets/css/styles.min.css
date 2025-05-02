@@ -1522,6 +1522,19 @@ small.max-width {
 		text-align:right;
 	}
 	
+		
+	#tenMinutesAgoDate9 {
+		background:none;
+		border:none;
+		color:#fff;
+	}
+	
+	#tenMinutesAgoTime9 {
+		background:none;
+		border:none;
+		color:#fff;
+	}
+	
 .alarm-row .alarm-pill-high, .alarm-row .alarm-pill {
 	float:left;
 	display:inline-block;
@@ -1646,6 +1659,7 @@ table.status-table {
 
  .accordion {
       overflow: hidden;
+	  padding:16px 0;
     }
 
     .accordion input {
@@ -1664,5 +1678,5 @@ table.status-table {
     }
 
     .accordion input:checked + label + .content {
-      padding: 1rem 0 8rem 0;
+      padding: 1rem 0 10rem 0;
     }
