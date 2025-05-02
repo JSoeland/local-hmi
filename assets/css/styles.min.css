@@ -1680,3 +1680,42 @@ table.status-table {
     .accordion input:checked + label + .content {
       padding: 1rem 0 10rem 0;
     }
+
+#nowTime {
+		background:none;
+		border:none;
+		color:#fff;
+		width:auto;
+		width:96px;
+	}
+	
+.alarms-list {
+	color:#fff;
+	border-top:1px solid #444;
+	padding: 12px;
+}
+.alarms-list .col-lg-2, .alarms-list .col-lg-4, .alarms-list .col-lg-1, .alarms-list .col-lg-5 {
+	margin:auto;
+}
+.alarms-list:hover {
+	background:rgba(0,0,0,0.4);
+	cursor:pointer;
+}
+
+.alarm-history:hover {
+	background:rgba(0,0,0,0.4);
+}
+.alarm-history {
+	padding:4px;
+}
+.reddot {
+    color: #FF3E32;
+    padding-right: 6px;
+    font-size: 24px;
+    line-height: 0;
+}
+.alarms-header {
+	border-radius:6px;
+	border:none;
+	background:#333;
+}
