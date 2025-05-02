@@ -642,32 +642,46 @@
 	 <a href="./index_device.html"><h2>Inverter 1.A.2</h2></a>
       <span style="cursor: pointer;" onclick="toggleSidebar()">✕</span>
     </div>
-    <div class="sidebar-subtitle">Inverters / Eaton Inverters</div>
 	<div class="device-model"> <i class="ti ti-bolt"></i>SMA SC2600</div>
-<hr>
+
 <div class="sidebar-subtitle">Alarm</div>  
    <h4>Inverter Fault</h4>
    
 <p>Inverter has reported the following fault: (Insulation impedance) </p>
- <hr>
+
+
  <div class="sidebar-subtitle">Action</div>
 <p>Evaluate active tracker and inverter faults. Check if a combiner / inverter module is off, or if something else such as a tracker or site curtailment is limiting production. Dispatch to site and open outage for capacity derate as necessary.</p>
 
  <hr>
   
   <div class="sidebar-subtitle">Details</div>
-  <div class="field"><label>Device</label><input type="text" value="Inverter 1" readonly></div>
-<div class="field"><label>Severity</label><input type="text" value="High" readonly></div>
-    <div class="field"><label>Raised Date</label><input type="text" id="tenMinutesAgoDate9" readonly></div>
-	<div class="field"><label>Raised Time</label><input type="text" id="tenMinutesAgoTime9" readonly></div>
-    <div class="field"><label>ID</label><input type="text" value="1234234" readonly></div>
-    <div class="field"><label>Status</label><input type="text" value="Online" readonly></div>
+  <div class="field"><label>Severity</label><input type="text" value="High" readonly></div>
+<div class="field"><label>Some other Point</label><input type="text" value="103 MW" readonly></div>
+    <div class="field"><label>Another Point</label><input type="text" value="65 MW" readonly></div>
 	
     <canvas id="energyChart"></canvas>
+	
+		<div class="row">
+	<div class="col-lg-3 sidebar-subtitle">ID</div>
+		<div class="col-lg-3 sidebar-subtitle">Raised</div>
+	</div>
+	<div class="row">
+	<div class="col-lg-3">234567</div>
+		<div class="col-lg-3">    <input type="text" id="tenMinutesAgoDate9" readonly><input type="text" id="tenMinutesAgoTime9" readonly>
+		</div>
+	</div>
+	
 	<div class="accordion">
   <input type="checkbox" id="section1">
-  <label for="section1">History<i class="ti ti-chevron-down"></i></label>
+  <label for="section1">View History<i class="ti ti-chevron-down"></i></label>
   <div class="content">
+  <div class="row">
+	<div class="col-lg-3 sidebar-subtitle">ID</div>
+		<div class="col-lg-3 sidebar-subtitle">Raised</div>
+				<div class="col-lg-3 sidebar-subtitle">Cleared</div>
+		<div class="col-lg-3 sidebar-subtitle">User</div>
+	</div>
     <div class="row">
 	<div class="col-lg-3">19920615</div>
 		<div class="col-lg-3">04/29/2025 06:37 AM</div>
@@ -882,6 +896,37 @@
 }
 
     });
+  </script>
+  <script>
+    function updateTimeFields() {
+      const now = new Date();
+      const tenMinAgo = new Date(now.getTime() - 10 * 60 * 1000);
+
+      const pad = n => n.toString().padStart(2, '0');
+
+      const formatDate = date => {
+        return `${pad(date.getMonth() + 1)}/${pad(date.getDate())}/${date.getFullYear()}`;
+      };
+
+      const formatTime12Hour = date => {
+        let hours = date.getHours();
+        const minutes = pad(date.getMinutes());
+        const seconds = pad(date.getSeconds());
+        const ampm = hours >= 12 ? 'PM' : 'AM';
+        hours = hours % 12;
+        hours = hours ? hours : 12; // 0 becomes 12
+        return `${pad(hours)}:${minutes}:${seconds} ${ampm} PST`;
+      };
+
+      const formatDateTime = date => {
+        return `${formatDate(date)} ${formatTime12Hour(date)}`;
+      };
+
+      document.getElementById('tenMinutesAgoDate9').value = formatDate(tenMinAgo);
+      document.getElementById('tenMinutesAgoTime9').value = formatTime12Hour(tenMinAgo);
+    }
+
+    updateTimeFields();
   </script>
 </body>
 
