@@ -377,22 +377,21 @@
     const ctx = document.getElementById('energyChart').getContext('2d');
 
     const energyChart = new Chart(ctx, {
-      type: 'bar',
+      type: 'line',
       data: {
-        labels: ['6AM', '9AM', '12PM', '3PM', '6PM'],
+        labels: ['11:16 AM', '11:18 AM', '11:20 AM', '11:22 AM', '11:24 AM'],
         datasets: [
           {
-            label: 'Generation (kWh)',
-            data: [0, 50, 120, 100, 30],
-            backgroundColor: 'rgba(73, 164, 239, 0.6)',
+            label: 'kW',
+            data: [1903, 1965, 1950, 1906, 1876],
+			borderColor: 'rgba(73, 164, 239, 1)',
             yAxisID: 'y',
           },
           {
-            label: 'Irradiance (W/m²)',
-            data: [0, 200, 800, 700, 150],
+            label: 'Volts',
+            data: [652, 646, 664, 650, 630],
             type: 'line',
             borderColor: 'rgba(255, 191, 60, 1)',
-            backgroundColor: 'rgba(77, 66, 43, 0.2)',
             fill: true,
             yAxisID: 'y1',
           }
@@ -421,7 +420,7 @@
       position: 'left',
       title: {
         display: true,
-        text: 'Generation (kWh)',
+        text: 'kW',
         color: 'white' // <-- Y-axis title color
       },
       ticks: {
@@ -436,7 +435,7 @@
       position: 'right',
       title: {
         display: true,
-        text: 'Irradiance (W/m²)',
+        text: 'Volts',
         color: 'white'
       },
       ticks: {
