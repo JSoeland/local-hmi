@@ -32,8 +32,12 @@
           <div class="navbar-collapse justify-content-end px-0" id="navbarNav">
             <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-end">
                <li>
-				<div class="weather">
-					<ul><li>PST 3:33 PM</li><li>UTC 9:50 PM</li><li>82° F Sunny <i class="ti ti-sun"></i></li></ul>
+					<div class="weather">
+					<ul>
+					<li id="pst-time"></li>
+					<li id="utc-time"></li>
+					<li>82° F Sunny <i class="ti ti-sun"></i></li>
+					</ul>
 				</div>
 				</li>
               <li class="nav-item dropdown">
@@ -58,7 +62,7 @@
         <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
 		  
 		  <ul id="sidebarnav">
-		            	<li class="sidebar-item">
+		     <li class="sidebar-item">
               <a class="sidebar-link" href="./index.html" aria-expanded="false">
                 <span>
                   <i class="ti ti-timeline-event"></i>
@@ -143,7 +147,7 @@
       <div class="row-begin">
 			  <div class="search-container">
 	  <i class="ti ti-search search-icon"></i>
-      <input type="text" placeholder="Search...">
+      <input type="text" placeholder="Search..." value="mode|">
 	  </div>
 		   <label>
 		   <div class="dd-button">Type <i class="ti ti-chevron-down"></i></div>
@@ -159,6 +163,7 @@
 		   <div class="active dd-button">Inverters <i class="ti ti-chevron-down"></i></div>
 			<input type="checkbox" class="dd-input" id="test">
 			  <ul class="dd-menu">
+			 
 				<li style="background:#131313;"><i class="ti ti-chevron-right"></i>&nbsp; <i class="ti ti-square-check"></i>&nbsp; Inverter</li>
 				<li><i class="ti ti-chevron-right"></i>&nbsp; <i class="ti ti-square"></i>&nbsp; Meter</li>
 				<li><i class="ti ti-chevron-right"></i>&nbsp; <i class="ti ti-square"></i>&nbsp; Meteorological</li>
@@ -177,12 +182,12 @@
     <table class="table">
       <thead>
         <tr>
+		  <th>Identifier</th>
           <th>Point</th>
           <th>Type</th>
-          <th>Device</th>
-          <th>Identifier</th>
+          <th>Device Type</th>
           <th>Data Quality</th>
-		  <th>Engineering Value</th>
+		  <th>Eng Value</th>
 		   <th>Raw Value</th>
 			<th>Unit of Measure</th>
 			<th>Last Change (PST)</th>
@@ -191,65 +196,160 @@
       </thead>
       <tbody>
         <tr onclick="toggleSidebar()" style="cursor:pointer;">
-          <td><strong>Point Name</strong><br><small>Folder / Device Name / Dataset Name</small></td>
+                 <td>40023</td>
+				 <td><strong>Active P-Q Mode Digitals</strong><br><small>Eaton Inverters / Inverter R-PCS1 / Inputs-1</small></td>
           <td> <div class="icon-left"><i class="ti ti-arrow-left"></i></div><strong>Modbus</strong><br><small>Holding Register</small></td>
 		  <td><div class="device-pill"> <i class="ti ti-exchange"></i>Inverter</div></td>
-          <td>40023</td>
           <td><span class="reddot">•</span>Offline</td>
           <td>1156</td>
 		  <td>1156</td>
-		  <td>kVAR</td>
+		  <td></td>
 		  <td><small>4/8/25</small><br> 10:20am</td>
 		  <td><small>4/8/25</small><br> 10:20am</td>
         </tr>
-		 <tr onclick="toggleSidebar()" style="cursor:pointer;">
-          <td><strong>Point Name</strong><br><small>Folder / Device</small></td>
-          <td> <div class="icon-left"><i class="ti ti-calculator" style="color:#909090;"></i></div><strong>Calculation</strong><br><small>Control Point</small></td>
+		     <tr onclick="toggleSidebar()" style="cursor:pointer;">
+                 <td>40023</td>
+				 <td><strong>Active P-Q Mode Digitals</strong><br><small>Eaton Inverters / Inverter R-PCS2 / Inputs-1</small></td>
+          <td> <div class="icon-left"><i class="ti ti-arrow-left"></i></div><strong>Modbus</strong><br><small>Holding Register</small></td>
 		  <td><div class="device-pill"> <i class="ti ti-exchange"></i>Inverter</div></td>
-          <td></td>
           <td><span class="reddot">•</span>Offline</td>
           <td>1156</td>
 		  <td>1156</td>
-		  <td>kVAR</td>
+		  <td></td>
 		  <td><small>4/8/25</small><br> 10:20am</td>
 		  <td><small>4/8/25</small><br> 10:20am</td>
         </tr>
-        <tr onclick="toggleSidebar()" style="cursor:pointer;">
-          <td><strong>Point Name</strong><br><small>Folder / Device Name / Dataset Name</small></td>
+				     <tr onclick="toggleSidebar()" style="cursor:pointer;">
+                 <td>40023</td>
+				 <td><strong>Active P-Q Mode Digitals</strong><br><small>Eaton Inverters / Inverter R-PCS3 / Inputs-1</small></td>
           <td> <div class="icon-left"><i class="ti ti-arrow-left"></i></div><strong>Modbus</strong><br><small>Holding Register</small></td>
 		  <td><div class="device-pill"> <i class="ti ti-exchange"></i>Inverter</div></td>
-          <td>40023</td>
-          <td><span class="greendot">•</span>Online</td>
+          <td><span class="reddot">•</span>Offline</td>
           <td>1156</td>
 		  <td>1156</td>
-		  <td>kVAR</td>
+		  <td></td>
+		  <td><small>4/8/25</small><br> 10:20am</td>
+		  <td><small>4/8/25</small><br> 10:20am</td>
+        </tr>
+				     <tr onclick="toggleSidebar()" style="cursor:pointer;">
+                 <td>40023</td>
+				 <td><strong>Active P-Q Mode Digitals</strong><br><small>Eaton Inverters / Inverter R-PCS4 / Inputs-1</small></td>
+          <td> <div class="icon-left"><i class="ti ti-arrow-left"></i></div><strong>Modbus</strong><br><small>Holding Register</small></td>
+		  <td><div class="device-pill"> <i class="ti ti-exchange"></i>Inverter</div></td>
+          <td><span class="reddot">•</span>Offline</td>
+          <td>1156</td>
+		  <td>1156</td>
+		  <td></td>
 		  <td><small>4/8/25</small><br> 10:20am</td>
 		  <td><small>4/8/25</small><br> 10:20am</td>
         </tr>
 		 <tr onclick="toggleSidebar()" style="cursor:pointer;">
-          <td><strong>Point Name</strong><br><small>Folder / Device</small></td>
-          <td> <div class="icon-left"><i class="ti ti-calculator" style="color:#909090;"></i></div><strong>Calculation</strong><br><small>Average</small></td>
+                <td></td>
+		 <td><strong>Mode Control Digitals</strong><br><small>Eaton Inverters / Inverter R-PCS1</small></td>
+          <td> <div class="icon-left"><i class="ti ti-calculator" style="color:#909090;"></i></div><strong>Calculation</strong><br><small>PutBit</small></td>
 		  <td><div class="device-pill"> <i class="ti ti-exchange"></i>Inverter</div></td>
-          <td></td>
-          <td><span class="greendot">•</span>Online</td>
+          <td><span class="reddot">•</span>Offline</td>
           <td>1156</td>
 		  <td>1156</td>
-		  <td>kVAR</td>
+		  <td></td>
 		  <td><small>4/8/25</small><br> 10:20am</td>
 		  <td><small>4/8/25</small><br> 10:20am</td>
         </tr>
 		 <tr onclick="toggleSidebar()" style="cursor:pointer;">
-          <td><strong>Point Name</strong><br><small>Folder / Device Name / Dataset Name</small></td>
-          <td> <div class="icon-left"><i class="ti ti-arrow-left"></i></div><strong>Modbus</strong><br><small>Holding Register</small></td>
+                <td></td>
+		 <td><strong>Mode Control Digitals</strong><br><small>Eaton Inverters / Inverter R-PCS2</small></td>
+          <td> <div class="icon-left"><i class="ti ti-calculator" style="color:#909090;"></i></div><strong>Calculation</strong><br><small>PutBit</small></td>
 		  <td><div class="device-pill"> <i class="ti ti-exchange"></i>Inverter</div></td>
-          <td>40023</td>
-          <td><span class="greendot">•</span>Online</td>
+          <td><span class="reddot">•</span>Offline</td>
           <td>1156</td>
 		  <td>1156</td>
-		  <td>kVAR</td>
+		  <td></td>
 		  <td><small>4/8/25</small><br> 10:20am</td>
 		  <td><small>4/8/25</small><br> 10:20am</td>
         </tr>
+		 <tr onclick="toggleSidebar()" style="cursor:pointer;">
+                <td></td>
+		 <td><strong>Mode Control Digitals</strong><br><small>Eaton Inverters / Inverter R-PCS3</small></td>
+          <td> <div class="icon-left"><i class="ti ti-calculator" style="color:#909090;"></i></div><strong>Calculation</strong><br><small>PutBit</small></td>
+		  <td><div class="device-pill"> <i class="ti ti-exchange"></i>Inverter</div></td>
+          <td><span class="reddot">•</span>Offline</td>
+          <td>1156</td>
+		  <td>1156</td>
+		  <td></td>
+		  <td><small>4/8/25</small><br> 10:20am</td>
+		  <td><small>4/8/25</small><br> 10:20am</td>
+        </tr> <tr onclick="toggleSidebar()" style="cursor:pointer;">
+                <td></td>
+		 <td><strong>Mode Control Digitals</strong><br><small>Eaton Inverters / Inverter R-PCS4</small></td>
+          <td> <div class="icon-left"><i class="ti ti-calculator" style="color:#909090;"></i></div><strong>Calculation</strong><br><small>PutBit</small></td>
+		  <td><div class="device-pill"> <i class="ti ti-exchange"></i>Inverter</div></td>
+          <td><span class="reddot">•</span>Offline</td>
+          <td>1156</td>
+		  <td>1156</td>
+		  <td></td>
+		  <td><small>4/8/25</small><br> 10:20am</td>
+		  <td><small>4/8/25</small><br> 10:20am</td>
+        </tr>
+		 <tr onclick="toggleSidebar()" style="cursor:pointer;">
+                 <td>40202</td>
+				 <td><strong>Mode Control Digitals</strong><br><small>Eaton Inverters / Inverter R-PCS1 / HREGS2</small></td>
+          <td> <div class="icon-left"><i class="ti ti-arrow-right"></i></div><strong>Modbus</strong><br><small>Holding Register</small></td>
+		  <td><div class="device-pill"> <i class="ti ti-exchange"></i>Inverter</div></td>
+          <td><span class="greendot">•</span>Online</td>
+          <td>1156</td>
+		  <td>1156</td>
+		  <td></td>
+		  <td><small>4/8/25</small><br> 10:20am</td>
+		  <td><small>4/8/25</small><br> 10:20am</td>
+        </tr>
+		 <tr onclick="toggleSidebar()" style="cursor:pointer;">
+                 <td>40202</td>
+				 <td><strong>Mode Control Digitals</strong><br><small>Eaton Inverters / Inverter R-PCS2 / HREGS2</small></td>
+          <td> <div class="icon-left"><i class="ti ti-arrow-right"></i></div><strong>Modbus</strong><br><small>Holding Register</small></td>
+		  <td><div class="device-pill"> <i class="ti ti-exchange"></i>Inverter</div></td>
+          <td><span class="greendot">•</span>Online</td>
+          <td>1156</td>
+		  <td>1156</td>
+		  <td></td>
+		  <td><small>4/8/25</small><br> 10:20am</td>
+		  <td><small>4/8/25</small><br> 10:20am</td>
+        </tr> <tr onclick="toggleSidebar()" style="cursor:pointer;">
+                 <td>40202</td>
+				 <td><strong>Mode Control Digitals</strong><br><small>Eaton Inverters / Inverter R-PCS3 / HREGS2</small></td>
+          <td> <div class="icon-left"><i class="ti ti-arrow-right"></i></div><strong>Modbus</strong><br><small>Holding Register</small></td>
+		  <td><div class="device-pill"> <i class="ti ti-exchange"></i>Inverter</div></td>
+          <td><span class="greendot">•</span>Online</td>
+          <td>1156</td>
+		  <td>1156</td>
+		  <td></td>
+		  <td><small>4/8/25</small><br> 10:20am</td>
+		  <td><small>4/8/25</small><br> 10:20am</td>
+        </tr> <tr onclick="toggleSidebar()" style="cursor:pointer;">
+                 <td>40202</td>
+				 <td><strong>Mode Control Digitals</strong><br><small>Eaton Inverters / Inverter R-PCS4 / HREGS2</small></td>
+          <td> <div class="icon-left"><i class="ti ti-arrow-right"></i></div><strong>Modbus</strong><br><small>Holding Register</small></td>
+		  <td><div class="device-pill"> <i class="ti ti-exchange"></i>Inverter</div></td>
+          <td><span class="greendot">•</span>Online</td>
+          <td>1156</td>
+		  <td>1156</td>
+		  <td></td>
+		  <td><small>4/8/25</small><br> 10:20am</td>
+		  <td><small>4/8/25</small><br> 10:20am</td>
+        </tr>
+				 <tr onclick="toggleSidebar()" style="cursor:pointer;">
+                 <td>40202</td>
+				 <td><strong>Mode Control Digitals</strong><br><small>Eaton Inverters / Inverter R-PCS1 / Inputs-2</small></td>
+          <td> <div class="icon-left"><i class="ti ti-arrow-left"></i></div><strong>Modbus</strong><br><small>Holding Register</small></td>
+		  <td><div class="device-pill"> <i class="ti ti-exchange"></i>Inverter</div></td>
+          <td><span class="greendot">•</span>Online</td>
+          <td>1156</td>
+		  <td>1156</td>
+		  <td></td>
+		  <td><small>4/8/25</small><br> 10:20am</td>
+		  <td><small>4/8/25</small><br> 10:20am</td>
+        </tr>
+
+		
        
         <!-- Add more rows here as needed -->
       </tbody>
@@ -300,6 +400,33 @@
     function toggleSidebar() {
       document.getElementById('sidebar').classList.toggle('open');
     }
+  </script>
+     <script>
+    function pad(value) {
+      return String(value).padStart(2, '0');
+    }
+
+    function updateTime() {
+      const now = new Date();
+
+      // UTC time (HH:MM:SS)
+      const utcHours = pad(now.getUTCHours());
+      const utcMinutes = pad(now.getUTCMinutes());
+      const utcSeconds = pad(now.getUTCSeconds());
+      document.getElementById('utc-time').textContent = `${utcHours}:${utcMinutes} UTC`;
+
+      // PST time using Intl.DateTimeFormat
+      const pstFormatter = new Intl.DateTimeFormat('en-US', {
+        timeZone: 'America/Los_Angeles',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: true
+      });
+      const pstTime = pstFormatter.format(now);
+      document.getElementById('pst-time').textContent = `${pstTime} PST`;
+    }
+
+    updateTime();
   </script>
 </body>
 
