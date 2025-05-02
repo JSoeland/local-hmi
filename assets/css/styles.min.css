@@ -1617,7 +1617,7 @@ table.status-table {
       border-radius: 6px;
       overflow: hidden;
       height: 20px;
-      margin: 8px 0 16px 0;
+	  margin-bottom:12px;
     }
 
     .kw-bar {
