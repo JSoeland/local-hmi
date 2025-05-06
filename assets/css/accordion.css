@@ -109,7 +109,7 @@ header {
 		padding-top:12px;
 	}
 	.carda ul {
-		margin-bottom: 6px !important;
+		margin-bottom: 3px !important;
 	}
 	.carda ul li {
 		display:inline-block;
@@ -161,6 +161,20 @@ header {
 		background:none;
 	}
 	
+		 .control-content2 {
+      max-height: 0;
+      overflow: hidden;
+      transition: all 0.3s ease-out;
+    }
+
+    .control-content2.open {
+	max-height: 600px;
+	  margin-top:-10px;
+	  border-radius:0 0 6px 6px;
+	  color:#fff;
+	  padding: 0 0 8px 0;
+	}
+
 .radio-container input[type="radio"]{
 	margin: 16px 8px;
 }
@@ -184,6 +198,8 @@ div.field-container {
     .field-container input::placeholder {
       color: #ccc;
     }
+	
+
 
  .button{
 	padding: 8px 16px;

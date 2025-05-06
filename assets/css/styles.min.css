@@ -1523,17 +1523,13 @@ small.max-width {
 	}
 	
 		
-	#tenMinutesAgoDate9 {
+	#tenMinutesAgoDate9, #tenMinutesAgoDateA, #tenMinutesAgoDateB, #tenMinutesAgoTime9, #tenMinutesAgoTimeA, #tenMinutesAgoTimeB {
 		background:none;
 		border:none;
 		color:#fff;
 	}
 	
-	#tenMinutesAgoTime9 {
-		background:none;
-		border:none;
-		color:#fff;
-	}
+
 	
 .alarm-row .alarm-pill-high, .alarm-row .alarm-pill {
 	float:left;
@@ -1718,4 +1714,20 @@ table.status-table {
 	border-radius:6px;
 	border:none;
 	background:#333;
+}
+
+.force-value {
+	background:#2c2c2c;
+	border-radius: 6px;
+	padding: 8px 0;
+}
+.force-value:hover {
+	cursor: pointer;
+}
+.force-value span{
+	color:#49A4EF;
+}
+.point-sidebar-greendot span.greendot {
+	color:#7AFFBF;
+			padding:4px;
 }
