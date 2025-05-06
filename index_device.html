@@ -346,38 +346,41 @@
       <span style="cursor: pointer;" onclick="toggleSidebar()">✕</span>
     </div>
     <div class="sidebar-subtitle">Server / Dataset Name</div>
-	<table class="table">
-	<tr>
-	<td>
-	<div class="row">
-	<div class="col-lg-4">
-	<span class="greendot">•</span>Online</div>
-	<div class="col-lg-3">Engineering<br><h2>56</h2></div>
-	<div class="col-lg-3">Raw Value<br><h2>56</h2></div></div>
-	</td>
-	</tr>
-	<tr><td><a href="">Force Value</a></td></tr>
-
-	</table>
-
-    <table class="table">
+	<div class="point-sidebar-greendot"><span class="greendot">•</span>Online</div>
 	
-	<tr>
-	<td>   <div class="row"><div class="col-lg-4">Last Change</div>
-	<div class="col-lg-2"><input type="text" id="tenMinutesAgoDate" readonly></div>
-<div class="col-lg-4"><input type="text" id="tenMinutesAgoTime" readonly> </div>
-</div>
-</td>
-</tr>
-<tr>
-	<td>   <div class="row"><div class="col-lg-4">Last Reading</div>
-	<div class="col-lg-2"><input type="text" id="tenMinutesAgoDate2" readonly></div>
-<div class="col-lg-4"><input type="text" id="tenMinutesAgoTime2" readonly> </div>
-</div>
-</td>
-</tr>
+	<div class="row force-value mt-2">
+	<div class="col-lg-6">Engineering<br><h2>56</h2></div>
+	<div class="col-lg-6">Raw Value<br><h2>56</h2></div>
+	<div class="col-lg-12">
+							<div class="force-value" onclick="toggleControl(this)">
+								<span>Force Value</span>
+							</div>
+							<div class="control-content2">
+							<label class="radio-container"><span class="custom-radio"></span><input type="radio" checked="checked" name="radio">Engineering</label>
+							<label class="radio-container"><span class="custom-radio"></span><input type="radio" name="radio">Raw</label>
+								<div class="field-container">
+								  <input type="text" placeholder="0">
+								  </div>
+								  <div class="button">Force</div>
+							</div>
+	</div>
+	</div>
 
-	</table>
+
+ <div class="row">
+ <div class="col-lg-6">
+ <div class="sidebar-subtitle">Last Change</div>
+ <input type="text" id="tenMinutesAgoDateA" readonly>
+<input type="text" id="tenMinutesAgoTimeA" readonly>
+ </div>
+  <div class="col-lg-6">
+  <div class="sidebar-subtitle">Last Reading</div>
+<div class="col-lg-6"><input type="text" id="tenMinutesAgoDateB" readonly></div>
+<div class="col-lg-6"><input type="text" id="tenMinutesAgoTimeB" readonly> </div>
+</div>
+</div>
+
+
 
 		
     <hr>
@@ -477,6 +480,13 @@
   <script src="assets/libs/apexcharts/dist/apexcharts.min.js"></script>
   <script src="assets/libs/simplebar/dist/simplebar.js"></script>
   <script src="assets/js/dashboard.js"></script>
+  
+   <script>
+function toggleControl(header) {
+  const content = header.nextElementSibling;
+  content.classList.toggle('open');
+}
+</script>
   <script>
     function toggleSidebar() {
       document.getElementById('sidebar').classList.toggle('open');
@@ -605,11 +615,11 @@
         return `${formatDate(date)} ${formatTime12Hour(date)}`;
       };
 
-      document.getElementById('tenMinutesAgoDate').value = formatDate(tenMinAgo);
-	        document.getElementById('tenMinutesAgoDate2').value = formatDate(tenMinAgo);
+      document.getElementById('tenMinutesAgoDateA').value = formatDate(tenMinAgo);
+	        document.getElementById('tenMinutesAgoDateB').value = formatDate(tenMinAgo);
 	  document.getElementById('tenMinutesAgoDate9').value = formatDate(tenMinAgo);
-      document.getElementById('tenMinutesAgoTime').value = formatTime12Hour(tenMinAgo);
-	       document.getElementById('tenMinutesAgoTime2').value = formatTime12Hour(tenMinAgo);
+      document.getElementById('tenMinutesAgoTimeA').value = formatTime12Hour(tenMinAgo);
+	       document.getElementById('tenMinutesAgoTimeB').value = formatTime12Hour(tenMinAgo);
 	  document.getElementById('tenMinutesAgoTime9').value = formatTime12Hour(tenMinAgo);
     }
 
