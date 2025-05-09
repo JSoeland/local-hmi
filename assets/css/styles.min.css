@@ -1205,7 +1205,7 @@ div.search-container {
 	overflow:hidden;
 }
 
-.bg-inverter {
+.bg-inverter, .bg-inverter2 {
 	background-image: url("../images/charts/inverter.svg");
 	background-repeat:no-repeat;
 	background-position-x:88%;
@@ -1235,19 +1235,38 @@ background-position-x:88%;
 	background-size:82px;
 }
 
-.bg-tracker:hover, .bg-tracker:active {
-	background:rgba(0,0,0,0.2);
-	background-image: url("../images/charts/tracker.svg");
-	background-repeat:no-repeat;
-background-position-x:88%;
-	background-position-y:10%;
-	background-size:82px;
-}
 
 .bg-substation {
 	background-image: url("../images/charts/substation.svg");
 	background-repeat:no-repeat;
 	background-position-x:88%;
+	background-position-y:10%;
+	background-size:82px;
+}
+
+
+.bg-meter {
+	background-image: url("../images/charts/meter.svg");
+	background-repeat:no-repeat;
+	background-position-x:88%;
+	background-position-y:10%;
+	background-size:82px;
+}
+
+
+.bg-connection {
+	background-image: url("../images/charts/connection.svg");
+	background-repeat:no-repeat;
+	background-position-x:88%;
+	background-position-y:10%;
+	background-size:102px;
+}
+/*
+.bg-tracker:hover, .bg-tracker:active {
+	background:rgba(0,0,0,0.2);
+	background-image: url("../images/charts/tracker.svg");
+	background-repeat:no-repeat;
+background-position-x:88%;
 	background-position-y:10%;
 	background-size:82px;
 }
@@ -1261,14 +1280,6 @@ background-position-x:88%;
 	background-size:82px;
 }
 
-.bg-meter {
-	background-image: url("../images/charts/meter.svg");
-	background-repeat:no-repeat;
-	background-position-x:88%;
-	background-position-y:10%;
-	background-size:82px;
-}
-
 .bg-meter:hover, .bg-meter:active {
 	background:rgba(0,0,0,0.2);
 	background-image: url("../images/charts/meter.svg");
@@ -1278,33 +1289,20 @@ background-position-x:88%;
 	background-size:82px;
 }
 
-.bg-connection {
-	background-image: url("../images/charts/connection.svg");
-	background-repeat:no-repeat;
-	background-position-x:88%;
-	background-position-y:10%;
-	background-size:82px;
-}
-
 .bg-connection:hover, .bg-connection:active {
 	background:rgba(0,0,0,0.2);
 	background-image: url("../images/charts/connection.svg");
 	background-repeat:no-repeat;
-background-position-x:88%;
+	background-position-x:88%;
 	background-position-y:10%;
-	background-size:82px;
+	background-size:102px;
 }
-
-
-
-
+*/
 p {
 	font-weight:200;
 	font-size:1rem;
 	letter-spacing:0.2px;
 }
-
-
 
 .circle-chart {
   width: 166px;
@@ -1504,7 +1502,7 @@ small.max-width {
     }
 	
 	.alarm-card {
-		background-color:#291403;
+		background-color:#1a0d03;
 		border:1px solid #FFBF3C !important;
 	}
 	
@@ -1531,7 +1529,7 @@ small.max-width {
 	
 
 	
-.alarm-row .alarm-pill-high, .alarm-row .alarm-pill {
+.alarm-row .alarm-pill-high, .alarm-row .alarm-pill,  .alarm-row .alarm-pill-medium {
 	float:left;
 	display:inline-block;
 	margin-left:0;
@@ -1560,7 +1558,9 @@ table.status-table {
 	text-align:right;
 }
 
-
+.link:hover {
+	color:#49A4EF;
+}
 
 .inverter-card {
 	color:#fff;
@@ -1674,7 +1674,7 @@ table.status-table {
     }
 
     .accordion input:checked + label + .content {
-      padding: 1rem 0 10rem 0;
+      padding: 0 0 16rem 0;
     }
 
 #nowTime {
@@ -1693,8 +1693,12 @@ table.status-table {
 .alarms-list .col-lg-2, .alarms-list .col-lg-4, .alarms-list .col-lg-1, .alarms-list .col-lg-5 {
 	margin:auto;
 }
-.alarms-list:hover {
+.alarms-list-hover:hover {
 	background:rgba(0,0,0,0.4);
+	cursor:pointer;
+}
+.alarms-list-hover:active {
+	background:rgba(0,0,0,0.2);
 	cursor:pointer;
 }
 
@@ -1730,4 +1734,31 @@ table.status-table {
 .point-sidebar-greendot span.greendot {
 	color:#7AFFBF;
 			padding:4px;
+}
+
+.sidebar-device {
+	padding: 8px 4px;
+	margin-bottom:16px;
+	background:#323232;
+	padding:8px;
+	border-radius:6px;
+}
+.sidebar-device:hover, .equipment-list:hover {
+	background:rgba(0,0,0,0.4);
+	border-radius:6px;
+}
+ .sidebar-device:active, .equipment-list:active {
+	background:rgba(0,0,0,0.2);
+	border-radius:6px;
+}
+#energyChart {
+    height: auto !important;
+}
+.equipment-list {
+	color:#fff;
+	padding:6px 0;
+}
+.no-link a:hover {
+	background:none !important;
+	cursor:default;
 }
