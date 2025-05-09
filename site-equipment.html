@@ -79,28 +79,28 @@
                 <span>Site Equipment</span>
               </a>
             </li>
-			<li class="sidebar-item indent">
-              <a class="sidebar-link" href="./site-equipment.html" aria-expanded="false">
+			<li class="sidebar-item indent no-link">
+              <a class="sidebar-link" href="" aria-expanded="false">
                 <span class="hide-menu">Substation</span>
               </a>
             </li>
-			<li class="sidebar-item indent">
-              <a class="sidebar-link" href="./site-equipment.html" aria-expanded="false">
+			<li class="sidebar-item indent no-link">
+              <a class="sidebar-link" href="" aria-expanded="false">
                 <span class="hide-menu">Met Data</span>
               </a>
             </li>
-			<li class="sidebar-item indent">
-              <a class="sidebar-link" href="./site-equipment.html" aria-expanded="false">
+			<li class="sidebar-item indent no-link">
+              <a class="sidebar-link" href="" aria-expanded="false">
                 <span class="hide-menu">Network</span>
               </a>
             </li>
-			<li class="sidebar-item indent">
+			<li class="sidebar-item indent active-page">
               <a class="sidebar-link" href="./inverters.html" aria-expanded="false">
                 <span class="hide-menu">Inverters</span>
               </a>
             </li>
-			<li class="sidebar-item indent">
-              <a class="sidebar-link" href="./site-equipment.html" aria-expanded="false">
+			<li class="sidebar-item indent no-link">
+              <a class="sidebar-link" href="" aria-expanded="false">
                 <span class="hide-menu">Trackers</span>
               </a>
             </li>
@@ -182,26 +182,28 @@
   </div>
 </div>
 						</div>
-						  <div class="col-12">
-						   <table class="status-table">
-							
-								<tr>
-								  <td><span class="graydot">•</span>3 / 3</td>
-								  <td>Meters</td>
-								</tr>
-								<tr>
-								  <td><span class="yellowdot2">•</span>23 / 24</td>
-								  <td>Inverters</td>
-								</tr>
-								<tr>
-								  <td><span class="graydot">•</span>20 / 20</td>
-								  <td>Trackers</td>
-								</tr>
-							   				<tr>
-								  <td><span class="graydot">•</span>2 / 2</td>
-								  <td>Meteorological</td>
-								</tr>
-					   </table>
+						  <div class="col-12 mt-4">
+						  <div class="row equipment-list">
+						  		<div class="col-3"></div>
+						  		<div class="col-3"><span class="graydot">•</span>3 / 3</div>
+						  		<div class="col-6">Meters</div>
+						  </div>
+						  <div class="row equipment-list" onclick="window.location='./inverters.html';" style="cursor:pointer;">
+						  		<div class="col-3"></div>
+						  		<div class="col-3"><span class="yellowdot2">•</span>23 / 24</div>
+						  		<div class="col-6">Inverters</div>
+						  </div>
+						   <div class="row equipment-list">
+						  		<div class="col-3"></div>
+						  		<div class="col-3"><span class="graydot">•</span>20 / 20</div>
+						  		<div class="col-6">Trackers</div>
+						  </div>
+						  			  <div class="row equipment-list">
+						  		<div class="col-3"></div>
+						  		<div class="col-3"><span class="graydot">•</span>2 / 2</div>
+						  		<div class="col-6">Meteorological</div>
+						  </div>
+						   
 						</div>
 					  </div>
                     </div>
@@ -219,6 +221,43 @@
 		
 		
 		<div class="row mb-4">
+		 
+		 	 <div class="col-lg-4">
+		<div class="carda alarm-card">
+           <h3>Alarms</h3>
+		    	   <div class="row mt-2 alarm-row" onclick="window.location='./index_device.html';" style="cursor:pointer;">
+				 <div class="col-lg-3">
+					<div class="alarm-pill-high"> <i class="ti ti-alert-triangle"></i>High</div>
+				</div>
+				 <div class="col-lg-3">10:02 AM</div>
+				<div class="col-lg-6">Inverter 1.A.2</div>
+				</ul>
+          </div>
+		   <div class="row alarm-row">
+		    <div class="col-lg-3">
+					<div class="alarm-pill-high"> <i class="ti ti-alert-triangle"></i>High</div>
+				</div>
+		   <div class="col-lg-3">9:22 AM</div>
+				 <div class="col-lg-6">Network</div>
+				</ul>
+          </div>
+		  	   <div class="row alarm-row">
+			   <div class="col-lg-3">
+					<div class="alarm-pill-medium"> <i class="ti ti-alert-triangle"></i>Medium</div>
+				</div>
+		   <div class="col-lg-3">8:49 AM</div>
+				 <div class="col-lg-6">Main Check Meter</div>
+				</ul>
+          </div>
+		    
+		  	   <div class="row mt-2">
+		   <div style="text-align:right;">View All (8)</div>
+				</div>
+				</ul>
+          </div>
+		  
+        </div>
+		
 		 <div class="col-lg-4">
         <div class="carda">
           <h3>Meter</h3>
@@ -237,40 +276,7 @@
 		  <ul class="equipment"><li>Efficiency</li><li>98</li><li>%</li></ul>
         </div>
 		 </div>
-		 <div class="col-lg-4">
-		<div class="carda alarm-card">
-           <h3>Alarms</h3>
-		   <div class="row mt-2 alarm-row">
-		    <div class="col-lg-3">
-					<div class="alarm-pill"> <i class="ti ti-alert-triangle"></i>Critical</div>
-				</div>
-		   <div class="col-lg-3">8:49 AM</div>
-				 <div class="col-lg-6">Main Check Meter</div>
-				</ul>
-          </div>
-		  	   <div class="row alarm-row">
-			   <div class="col-lg-3">
-					<div class="alarm-pill"> <i class="ti ti-alert-triangle"></i>Critical</div>
-				</div>
-		   <div class="col-lg-3">8:49 AM</div>
-				 <div class="col-lg-6">Pad 4 XFMR</div>
-				</ul>
-          </div>
-		     	   <div class="row alarm-row" onclick="window.location='./index_device.html';" style="cursor:pointer;">
-				 <div class="col-lg-3">
-					<div class="alarm-pill-high"> <i class="ti ti-alert-triangle"></i>High</div>
-				</div>
-				 <div class="col-lg-3">8:49 AM</div>
-				<div class="col-lg-6">Inverter 1.A.2</div>
-				</ul>
-          </div>
-		  	   <div class="row mt-2">
-		   <div style="text-align:right;">View All (8)</div>
-				</div>
-				</ul>
-          </div>
-		  
-        </div>
+	
 		 </div>
      
 	 
@@ -489,19 +495,21 @@
     const ctx = document.getElementById('energyChart').getContext('2d');
 
     const energyChart = new Chart(ctx, {
-      type: 'bar',
+      type: 'line',
       data: {
-        labels: ['6AM', '9AM', '12PM', '3PM', '6PM'],
+        labels: ['9AM', '10AM', '11PM', '12PM', '1PM'],
         datasets: [
           {
-            label: 'Generation (kWh)',
-            data: [0, 50, 120, 100, 30],
+            label: 'Generation (MW)',
+            data: [48, 50, 60, 50, 68],
+			type: 'line',
+			borderColor: 'rgba(73, 164, 239, 1)',
             backgroundColor: 'rgba(73, 164, 239, 0.6)',
             yAxisID: 'y',
           },
           {
             label: 'Irradiance (W/m²)',
-            data: [0, 200, 800, 700, 150],
+            data: [971, 1022, 1073, 840, 1080],
             type: 'line',
             borderColor: 'rgba(255, 191, 60, 1)',
             backgroundColor: 'rgba(77, 66, 43, 0.2)',

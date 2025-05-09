@@ -405,37 +405,33 @@
 
 	<div class="sidebar-container" id="sidebar2">
     <div class="sidebar-header">
- 
-	 <h2>Alarm</h2>
-      <span style="cursor: pointer;" onclick="toggleSidebar2()">✕</span>
+ <div></div>
+ <span style="cursor: pointer;" onclick="toggleSidebar2()">✕</span>
     </div>
    
-   <h4>Inverter Fault</h4>
+   
+   <h5>Inverter Fault</h5>
    
 <p>Inverter has reported the following fault: (Insulation impedance) </p>
 
+
  <div class="sidebar-subtitle">Action</div>
 <p>Evaluate active tracker and inverter faults. Check if a combiner / inverter module is off, or if something else such as a tracker or site curtailment is limiting production. Dispatch to site and open outage for capacity derate as necessary.</p>
-  
-   <div class="sidebar-subtitle">Details</div>
-  <div class="field"><label>Severity</label><input type="text" value="High" readonly></div>
-<div class="field"><label>Some other Point</label><input type="text" value="103 MW" readonly></div>
-    <div class="field"><label>Another Point</label><input type="text" value="65 MW" readonly></div>
-	
+
+
 	<div class="row">
 	<div class="col-lg-3 sidebar-subtitle">ID</div>
 		<div class="col-lg-3 sidebar-subtitle">Raised</div>
 	</div>
 	<div class="row">
-	<div class="col-lg-3">234567</div>
-		<div class="col-lg-3">    <input type="text" id="tenMinutesAgoDate9" readonly><input type="text" id="tenMinutesAgoTime9" readonly>
+	<div class="col-lg-3">1563386</div>
+		<div class="col-lg-3">    <input type="text" id="tenMinutesAgoDate9" readonly></div>
+		<div class="col-lg-3"> <input type="text" id="tenMinutesAgoTime9" readonly>
 		</div>
 	</div>
-	
-	<div class="accordion">
-  <input type="checkbox" id="section1">
-  <label for="section1">History<i class="ti ti-chevron-down"></i></label>
-  <div class="content">
+	<br/>
+	 <h6>Alarm History</h6>
+
   <div class="row">
 	<div class="col-lg-3 sidebar-subtitle">ID</div>
 		<div class="col-lg-3 sidebar-subtitle">Raised</div>
@@ -443,32 +439,31 @@
 		<div class="col-lg-3 sidebar-subtitle">User</div>
 	</div>
     <div class="row">
-	<div class="col-lg-3">19920615</div>
-		<div class="col-lg-3">04/29/2025 06:37 AM</div>
-				<div class="col-lg-3">04/29/2025 06:39 AM</div>
-		<div class="col-lg-3">John Smith</div>
+	<div class="col-lg-3">1634567</div>
+		<div class="col-lg-3">05/17/2025 05:34 AM</div>
+				<div class="col-lg-3">05/17/2025 05:39 AM</div>
+		<div class="col-lg-3">Jerry Benson</div>
 	</div>
-    <div class="row">
-	<div class="col-lg-3">19920615</div>
-		<div class="col-lg-3">04/29/2025 06:37 AM</div>
-				<div class="col-lg-3">04/29/2025 06:39 AM</div>
-		<div class="col-lg-3">John Smith</div>
+    <div class="row mt-2">
+	<div class="col-lg-3">1634503</div>
+		<div class="col-lg-3">05/16/2025 08:12 AM</div>
+				<div class="col-lg-3">05/16/2025 08:18 AM</div>
+		<div class="col-lg-3">Kerry Harolds</div>
 	</div>
-    <div class="row">
-	<div class="col-lg-3">19920615</div>
-		<div class="col-lg-3">04/29/2025 06:37 AM</div>
-				<div class="col-lg-3">04/29/2025 06:39 AM</div>
-		<div class="col-lg-3">John Smith</div>
+    <div class="row mt-2">
+	<div class="col-lg-3">1634478</div>
+		<div class="col-lg-3">05/15/2025 12:11 AM</div>
+				<div class="col-lg-3">05/15/2025 12:56 AM</div>
+		<div class="col-lg-3">Jerry Benson</div>
 	</div>
-    <div class="row">
-	<div class="col-lg-3">19920615</div>
-		<div class="col-lg-3">04/29/2025 06:37 AM</div>
-				<div class="col-lg-3">04/29/2025 06:39 AM</div>
-		<div class="col-lg-3">John Smith</div>
+    <div class="row mt-2">
+	<div class="col-lg-3">1634434</div>
+		<div class="col-lg-3">05/14/2025 05:34 AM</div>
+				<div class="col-lg-3">05/14/2025 05:39 AM</div>
+		<div class="col-lg-3">Oliver Frank</div>
 	</div>
 
-  </div>
-  </div>
+
 	
   </div>
   
@@ -511,20 +506,20 @@ function toggleControl(header) {
     const energyChart = new Chart(ctx, {
       type: 'line',
       data: {
-        labels: ['11:16 AM', '11:18 AM', '11:20 AM', '11:22 AM', '11:24 AM'],
+        labels: ['9 AM', '10 AM', '11 AM', '12 AM', '1 PM'],
         datasets: [
           {
-            label: 'kW',
-            data: [1903, 1965, 1950, 1906, 1876],
-			borderColor: 'rgba(73, 164, 239, 1)',
+            label: 'Irradiance (W/m2)',
+            data: [971, 1022, 1073, 890, 980],
+			borderColor: 'rgba(255, 191, 60, 1)',
+			 fill: true,
             yAxisID: 'y',
           },
           {
-            label: 'Volts',
-            data: [652, 646, 664, 650, 630],
+            label: 'Generation (kW)',
+            data: [1303, 1316, 1826, 1203, 1654],
             type: 'line',
-            borderColor: 'rgba(255, 191, 60, 1)',
-            fill: true,
+            borderColor: 'rgba(73, 164, 239, 1)',
             yAxisID: 'y1',
           }
         ]
@@ -552,7 +547,7 @@ function toggleControl(header) {
       position: 'left',
       title: {
         display: true,
-        text: 'kW',
+        text: 'W/m2',
         color: 'white' // <-- Y-axis title color
       },
       ticks: {
@@ -567,7 +562,7 @@ function toggleControl(header) {
       position: 'right',
       title: {
         display: true,
-        text: 'Volts',
+        text: 'kW',
         color: 'white'
       },
       ticks: {
