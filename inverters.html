@@ -26,7 +26,7 @@
               </a>
             </li>
             <li class="site-title">
-			 Site Name
+			 Phoenix Hyperion
             </li>
 			   
           </ul>
@@ -69,7 +69,7 @@
                 <span>
                   <i class="ti ti-timeline-event"></i>
                 </span>
-                <span class="hide-menu">Site Diagram</span>
+                <span class="hide-menu">Site Status</span>
               </a>
             </li>
             <li class="sidebar-item">
@@ -907,19 +907,22 @@
     const energyChart = new Chart(ctx, {
       type: 'line',
       data: {
-        labels: ['11:16 AM', '11:18 AM', '11:20 AM', '11:22 AM', '11:24 AM'],
+        labels: ['9AM', '10AM', '11PM', '12PM', '1PM'],
         datasets: [
           {
-            label: 'kW',
-            data: [1903, 1965, 1950, 1906, 1876],
+            label: 'Generation (MW)',
+            data: [48, 50, 60, 50, 68],
+			type: 'line',
 			borderColor: 'rgba(73, 164, 239, 1)',
+            backgroundColor: 'rgba(73, 164, 239, 0.6)',
             yAxisID: 'y',
           },
           {
-            label: 'Volts',
-            data: [652, 646, 664, 650, 630],
+            label: 'Irradiance (W/m²)',
+            data: [971, 1022, 1073, 840, 1080],
             type: 'line',
             borderColor: 'rgba(255, 191, 60, 1)',
+            backgroundColor: 'rgba(77, 66, 43, 0.2)',
             fill: true,
             yAxisID: 'y1',
           }
@@ -948,7 +951,7 @@
       position: 'left',
       title: {
         display: true,
-        text: 'kW',
+        text: 'Generation (kWh)',
         color: 'white' // <-- Y-axis title color
       },
       ticks: {
@@ -963,7 +966,7 @@
       position: 'right',
       title: {
         display: true,
-        text: 'Volts',
+        text: 'Irradiance (W/m²)',
         color: 'white'
       },
       ticks: {
