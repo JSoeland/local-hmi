@@ -1204,23 +1204,48 @@ div.search-container {
     background-position: -19px -19px;
 	overflow:hidden;
 }
-
-.bg-inverter, .bg-inverter2 {
-	background-image: url("../images/charts/inverter.svg");
-	background-repeat:no-repeat;
-	background-position-x:88%;
-	background-position-y:10%;
-	background-size:82px;
-}
 .inverter-grid {
 	justify-content:space-around;
 	max-width:1060px;
 	margin:0 auto;
 	padding-top:5%;
 }
+.bg-inverter {
+	background-image: url("../images/charts/inverter-orange.svg");
+	background-repeat:no-repeat;
+	background-position-x:88%;
+	background-position-y:10%;
+	background-size:82px;
+	border: 1px solid #FC8F2B !important;
+	 -webkit-animation: pulse 1s infinite alternate;
+}
+
+/*Animation Prefs*/
+@-webkit-keyframes pulse {
+      0% {background-color: #0d1117;}
+     100% {background-color: #010409;}
+}
+
+
+.bg-inverter2 {
+	background-image: url("../images/charts/inverter-yellow.svg");
+	background-repeat:no-repeat;
+	background-position-x:88%;
+	background-position-y:10%;
+	background-size:82px;
+}
+
+.bg-inverter3 {
+	background-image: url("../images/charts/inverter-blue.svg");
+	background-repeat:no-repeat;
+	background-position-x:88%;
+	background-position-y:10%;
+	background-size:82px;
+}
+
 .bg-inverter:hover, .bg-inverter:active {
 	background:rgba(0,0,0,0.2);
-	background-image: url("../images/charts/inverter.svg");
+	background-image: url("../images/charts/inverter-orange.svg");
 	background-repeat:no-repeat;
 background-position-x:88%;
 	background-position-y:10%;
@@ -1228,7 +1253,7 @@ background-position-x:88%;
 }
 
 .bg-tracker {
-	background-image: url("../images/charts/tracker.svg");
+	background-image: url("../images/charts/tracker-blue.svg");
 	background-repeat:no-repeat;
 	background-position-x:88%;
 	background-position-y:10%;
@@ -1237,7 +1262,7 @@ background-position-x:88%;
 
 
 .bg-substation {
-	background-image: url("../images/charts/substation.svg");
+	background-image: url("../images/charts/substation-yellow.svg");
 	background-repeat:no-repeat;
 	background-position-x:88%;
 	background-position-y:10%;
@@ -1246,7 +1271,7 @@ background-position-x:88%;
 
 
 .bg-meter {
-	background-image: url("../images/charts/meter.svg");
+	background-image: url("../images/charts/meter-yellow.svg");
 	background-repeat:no-repeat;
 	background-position-x:88%;
 	background-position-y:10%;
@@ -1255,12 +1280,16 @@ background-position-x:88%;
 
 
 .bg-connection {
-	background-image: url("../images/charts/connection.svg");
+	background-image: url("../images/charts/connection-orange.svg");
 	background-repeat:no-repeat;
 	background-position-x:88%;
 	background-position-y:10%;
 	background-size:102px;
+	border: 1px solid #FC8F2B !important;
+	 -webkit-animation: pulse 1s infinite alternate;
 }
+
+
 /*
 .bg-tracker:hover, .bg-tracker:active {
 	background:rgba(0,0,0,0.2);
