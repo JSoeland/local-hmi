@@ -720,11 +720,26 @@
  <span style="cursor: pointer;" onclick="toggleSidebar()">✕</span>
     </div>
    
-   
-   <h5>Inverter Fault</h5>
-   
+   <div class="sidebar-subtitle">Device</div> 
+	
+	<div class="sidebar-device" onclick="window.location='./index_device.html';" style="cursor:pointer;">
+	 <h5>Inverter 1.A.2</h5>
+	<div class="device-model"> <i class="ti ti-bolt"></i>SMA SC2600</div>
+	</div>
+  
+  <div class="field"><label>A Point</label><input type="text" value="1.0" readonly></div>
+<div class="field"><label>Some other Point</label><input type="text" value="103 MW" readonly></div>
+    <div class="field"><label>Another Point</label><input type="text" value="65 MW" readonly></div>
+	
+    <canvas id="energyChart"></canvas>
+
+
+<div class="sidebar-subtitle">Alarm</div>
+
+<h5>Inverter Fault</h5>
 <p>Inverter has reported the following fault: (Insulation impedance) </p>
 
+<div class="alarm-pill-high" style="display:inline-block; margin:0  0 8px 0; float:none;"> <i class="ti ti-alert-triangle"></i>High</div>
 
  <div class="sidebar-subtitle">Action</div>
 <p>Evaluate active tracker and inverter faults. Check if a combiner / inverter module is off, or if something else such as a tracker or site curtailment is limiting production. Dispatch to site and open outage for capacity derate as necessary.</p>
@@ -780,18 +795,7 @@
 
   </div>
   </div>
-<div class="sidebar-subtitle">Device</div> 
-	
-	<div class="sidebar-device" onclick="window.location='./index_device.html';" style="cursor:pointer;">
-	 <h5>Inverter 1.A.2</h5>
-	<div class="device-model"> <i class="ti ti-bolt"></i>SMA SC2600</div>
-	</div>
-  
-  <div class="field"><label>A Point</label><input type="text" value="1.0" readonly></div>
-<div class="field"><label>Some other Point</label><input type="text" value="103 MW" readonly></div>
-    <div class="field"><label>Another Point</label><input type="text" value="65 MW" readonly></div>
-	
-    <canvas id="energyChart"></canvas>
+
 	
 
 	
