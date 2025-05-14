@@ -202,8 +202,7 @@
 		  
 		  	 <div class="col-lg-4">
               <div class="card">
-				<div class="carda">
-								  	
+				<div class="carda" style="border:none;">
 		  <div class="equipment-emphasis"><h2 class="alarm-medium">1,876<span>kW</span></h2></div>
 		  <div class="kw-bar-container">
 								  <div class="kw-bar" style="width: 64%;"></div>
@@ -513,7 +512,7 @@ function toggleControl(header) {
             label: 'Irradiance (W/m2)',
             data: [971, 1022, 1073, 890, 980],
 			borderColor: 'rgba(255, 191, 60, 1)',
-			 fill: true,
+			backgroundColor: 'rgba(0, 0, 0, 1)',
             yAxisID: 'y',
           },
           {
@@ -521,6 +520,7 @@ function toggleControl(header) {
             data: [1303, 1316, 1826, 1203, 1654],
             type: 'line',
             borderColor: 'rgba(73, 164, 239, 1)',
+			backgroundColor: 'rgba(0, 0, 0, 1)',
             yAxisID: 'y1',
           }
         ]
