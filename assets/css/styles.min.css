@@ -910,6 +910,15 @@ img.imgmodal-content {
 		margin:0 0 0 6px;
 		width:36px;
 	}
+		.search-bar div.right-detail {
+		border-radius:6px;
+		color:#FFF;
+		background:#151b23;
+		padding:8px 8px 4px 8px;
+		text-align:center;
+		cursor:default;
+	}
+	
 	.row-end {
 		float:right;
 		display:inline-flex;
@@ -1150,11 +1159,11 @@ div.search-container {
     .search-container input {
       width: 100%;
       padding: 10px 10px 10px 32px;
-      border: none;
-      background-color: #010409;
+      border: 1.5px solid #29323f;
+      background-color: #0d1117;
       color: white;
 	  border-radius:6px;
-	  height:35px;
+	  height:36px;
     }
 
     .search-container input::placeholder {
@@ -1609,12 +1618,11 @@ table.status-table {
     }
 
     .status-dot {
-      width: 12px;
-      height: 12px;
-      background-color: green;
+      width: 8px;
+      height: 8px;
+      background-color: #7AFFBF;
       border-radius: 50%;
       margin-right: 10px;
-      box-shadow: 0 0 6px green;
     }
 
     .inverter-card h2 {

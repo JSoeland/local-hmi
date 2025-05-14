@@ -188,8 +188,8 @@ div.field-container {
     .field-container input {
       width: 100%;
       padding: 10px 10px 10px 12px;
-      border: none;
-      background-color: #414141;
+       border: 1.5px solid #29323f;
+      background-color: #0d1117;
       color: white;
 	  border-radius:6px;
 	  height:35px;
