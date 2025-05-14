@@ -41,19 +41,19 @@
  .card-inactive:hover {background:#373737; border:1px solid #575757;}
 .tile-chart {padding-bottom:16px;}
 .mtt-1 {margin-top:9px;}
-.alarm-pill {border-radius:6px; padding:3px 10px; border:1px solid #FF3E32; background:#260000; color:#fff; float:right; margin-left: 8px;}
+.alarm-pill {border-radius:6px; padding:4px 8px 3px 8px; border:1px solid #FF3E32; background:#260000; color:#fff; float:right; margin-left: 8px;}
 .alarm-pill i {color:#ff3e32; margin-right:4px;}
 .alarm-pill:hover {background:#851414;}
 .tile-cog:hover {color:#bababa;}
-.alarm-pill-high {border-radius:6px; padding:3px 10px; border:1px solid #FC8F2B; background:#512701; color:#fff; float:right; margin-left: 8px;}
+.alarm-pill-high {border-radius:6px; padding:4px 8px 3px 8px; border:1px solid #FC8F2B; background:#512701; color:#fff; float:right; margin-left: 8px;}
 .alarm-pill-high i {color:#FC8F2B; margin-right:4px;}
 .alarm-pill-high:hover {background:#A35610;}
 
-.alarm-pill-medium {border-radius:6px; padding:3px 10px; border:1px solid #FFBF3C; background:#574401; color:#fff; float:right; margin-left: 8px;}
+.alarm-pill-medium {border-radius:6px; padding:4px 8px 3px 8px; border:1px solid #FFBF3C; background:#574401; color:#fff; float:right; margin-left: 8px;}
 .alarm-pill-medium i {color:#FFBF3C; margin-right:4px;}
 .alarm-pill-medium:hover {background:#B58218;}
 
-.alarm-pill-low {border-radius:6px; padding:3px 10px; border:1px solid #49A4EF; background:#061B2D; color:#fff; float:right; margin-left: 8px;}
+.alarm-pill-low {border-radius:6px; padding:4px 8px 3px 8px; border:1px solid #49A4EF; background:#061B2D; color:#fff; float:right; margin-left: 8px;}
 .alarm-pill-low i {color:#49A4EF; margin-right:4px;}
 .alarm-pill-low:hover {background:#092C4A;}
 
@@ -1031,7 +1031,7 @@ tr.alarm {
 		border-radius:10px;
 		background:#002F87;
 		color:#fff;
-		padding:4px 12px;
+		padding:4px 12px 3px 6px;
 		font-size:12px;
 		display:inline-block;
 		vertical-align:top;
@@ -1806,4 +1806,7 @@ table.status-table {
 }
 .blue {
 	color: #49A4EF;
+}
+.purple {
+	color:#C7AAFF;
 }
