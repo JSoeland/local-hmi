@@ -4,7 +4,7 @@
       right: -450px;
       width: 450px;
       height: 100%;
-      background-color: #414141;
+      background-color: #060a0f;
       box-shadow: -2px 0 10px rgba(0,0,0,0.5);
       padding: 20px;
       overflow-y: auto;
@@ -84,7 +84,7 @@
     .field input,
     .field select {
       flex: 1;
-      background-color: #323232;
+      background-color: #151b23;
       border: none;
       color: white;
       padding: 5px 10px;

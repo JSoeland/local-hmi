@@ -7,7 +7,7 @@ header {
 	position:fixed !important;
 }
     .accordion-item {
-      background-color: #323232;
+      background-color: #151b23;
 	  border:none;
 	  margin-bottom:8px;
 	  border-radius:6px;
@@ -24,7 +24,7 @@ header {
     }
 
     .accordion-header:hover {
-      background-color: #3c3c3c;
+      background-color: #010409;
     }
 
     .accordion-header span {
@@ -36,12 +36,12 @@ header {
       max-height: 0;
       overflow: hidden;
       transition: all 0.3s ease-out;
-      background-color: #323232;
+      background-color: #151b23;
 	  padding: 0 16px;\
     }
 
     .accordion-content.open {
-      max-height: 1000px;
+      max-height: 1800px;
       padding: 16px;
     }
 
@@ -142,7 +142,7 @@ header {
       max-height: 0;
       overflow: hidden;
       transition: all 0.3s ease-out;
-      background-color: #323232;
+      background-color: rgba(0,0,0,0.4);
 	  padding: 0 16px;
 	  margin-top:-8px;
     }
@@ -153,7 +153,7 @@ header {
 	  margin-top:-10px;
 	  border-radius:0 0 6px 6px;
 	  color:#fff;
-	    background:#585757;
+	    background:rgba(0,0,0,0.4);
 
     }
 	.control-header:hover {
