@@ -8,7 +8,14 @@
   <link rel="shortcut icon" type="image/png" href="assets/images/logos/favicon.png" />
   <link rel="stylesheet" href="assets/css/styles.min.css" />
     <link rel="stylesheet" href="assets/css/accordion.css" />
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="assets/js/chart.min.js"></script>
+
+<style>
+#energyChart {
+width:880px !important;
+height:480px !important;
+}
+</style>
 </head>
 
 <body style="overflow-x:hidden">
@@ -80,19 +87,13 @@
               </a>
             </li>
 			<li class="sidebar-item indent no-link">
-              <a class="sidebar-link" href="" aria-expanded="false">
                 <span class="hide-menu">Substation</span>
-              </a>
             </li>
 			<li class="sidebar-item indent no-link">
-              <a class="sidebar-link" href="" aria-expanded="false">
                 <span class="hide-menu">Met Data</span>
-              </a>
             </li>
 			<li class="sidebar-item indent no-link">
-              <a class="sidebar-link" href="" aria-expanded="false">
                 <span class="hide-menu">Network</span>
-              </a>
             </li>
 			<li class="sidebar-item indent">
               <a class="sidebar-link" href="./inverters.html" aria-expanded="false">
@@ -100,9 +101,7 @@
               </a>
             </li>
 			<li class="sidebar-item indent no-link">
-              <a class="sidebar-link" href="" aria-expanded="false">
                 <span class="hide-menu">Trackers</span>
-              </a>
             </li>
             <li class="sidebar-item">
               <a class="sidebar-link" href="./points.html" aria-expanded="false">
@@ -172,10 +171,10 @@
 		<div class="row">
 		  
 		  	 <div class="col-lg-4">
-              <div class="card overflow-hidden">
+              <div class="card overflow-hidden" style="height:482px;">
                   <div class="card-body">
                     <div class="row justify-content-center">
-					   <div class="col-12">
+					   <div class="col-12 mt-4">
                         <div class="circle-chart">
   <div class="circle" id="circle">
     <div class="inside-circle" id="circle-text">0%</div><span>Online</span>
@@ -238,7 +237,7 @@
 					<div class="alarm-pill-high"> <i class="ti ti-alert-triangle"></i>High</div>
 				</div>
 		   <div class="col-lg-3">9:22 AM</div>
-				 <div class="col-lg-6">Network</div>
+				 <div class="col-lg-6">Fiber Access Switch 2.C.8</div>
 				</ul>
           </div>
 		  	   <div class="row alarm-row">
@@ -246,7 +245,7 @@
 					<div class="alarm-pill-medium"> <i class="ti ti-alert-triangle"></i>Medium</div>
 				</div>
 		   <div class="col-lg-3">8:49 AM</div>
-				 <div class="col-lg-6">Main Check Meter</div>
+				 <div class="col-lg-6">POI Meter</div>
 				</ul>
           </div>
 		    
@@ -260,7 +259,7 @@
 		
 		 <div class="col-lg-4">
         <div class="carda">
-          <h3>Meter</h3>
+          <h3>POI Meter</h3>
 		  <div class="equipment-emphasis"><h2>199.9 <span>MW</span></h2></div>
           <ul class="equipment"><li>Bus Voltage</li><li>34.5</li><li>kV</li></ul>
 		  <ul class="equipment"><li>Reactive Power</li><li>-11.2</li><li>MVAR</li></ul>
@@ -553,7 +552,7 @@
         datasets: [
           {
             label: 'Generation (MW)',
-            data: [48, 50, 60, 50, 68],
+            data: [100.14, 153.8, 91.12, 61.59, 175.21],
 			type: 'line',
 			borderColor: 'rgba(73, 164, 239, 1)',
             backgroundColor: 'rgba(0, 0, 0, 1)',
@@ -561,7 +560,7 @@
           },
           {
             label: 'Irradiance (W/m²)',
-            data: [971, 1022, 1073, 840, 1080],
+            data: [70.12, 84.84, 106.06, 54.41, 53.44],
             type: 'line',
             borderColor: 'rgba(255, 191, 60, 1)',
             backgroundColor: 'rgba(0, 0, 0, 1)',
