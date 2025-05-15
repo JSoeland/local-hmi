@@ -1810,3 +1810,7 @@ table.status-table {
 .purple {
 	color:#C7AAFF;
 }
+small #tenMinutesAgoTime {
+	float:right;
+	padding: 8px;
+}
