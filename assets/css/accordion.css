@@ -116,14 +116,15 @@ header {
 		padding-left:16px;
 	}
 	.carda ul li:first-child {
-		width:64%;
+		width:60%;
 		color:#ddd;
+		line-height:1rem;
 	}
 	.carda ul li:nth-child(2) {
-		width:18%;
+		width:20%;
 	}
 	.carda ul li:nth-child(3) {
-		width:18%;
+		width:20%;
 		color:#ddd;
 		font-size:12px;
 	}
