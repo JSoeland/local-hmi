@@ -1223,7 +1223,7 @@ div.search-container {
 .bg-inverter {
 	background-image: url("../images/charts/inverter-orange.svg");
 	background-repeat:no-repeat;
-	background-position-x:88%;
+	background-position-x:92%;
 	background-position-y:10%;
 	background-size:82px;
 	border: 1px solid #FC8F2B !important;
@@ -1240,7 +1240,7 @@ div.search-container {
 .bg-inverter2 {
 	background-image: url("../images/charts/inverter-yellow.svg");
 	background-repeat:no-repeat;
-	background-position-x:88%;
+	background-position-x:92%;
 	background-position-y:10%;
 	background-size:82px;
 }
@@ -1248,7 +1248,7 @@ div.search-container {
 .bg-inverter3 {
 	background-image: url("../images/charts/inverter-blue.svg");
 	background-repeat:no-repeat;
-	background-position-x:88%;
+	background-position-x:92%;
 	background-position-y:10%;
 	background-size:82px;
 }
@@ -1257,7 +1257,7 @@ div.search-container {
 	background:rgba(0,0,0,0.2);
 	background-image: url("../images/charts/inverter-orange.svg");
 	background-repeat:no-repeat;
-background-position-x:88%;
+background-position-x:92%;
 	background-position-y:10%;
 	background-size:82px;
 }
@@ -1265,7 +1265,7 @@ background-position-x:88%;
 .bg-tracker {
 	background-image: url("../images/charts/tracker-blue.svg");
 	background-repeat:no-repeat;
-	background-position-x:88%;
+	background-position-x:92%;
 	background-position-y:10%;
 	background-size:82px;
 }
@@ -1274,7 +1274,7 @@ background-position-x:88%;
 .bg-substation {
 	background-image: url("../images/charts/substation-yellow.svg");
 	background-repeat:no-repeat;
-	background-position-x:88%;
+	background-position-x:92%;
 	background-position-y:10%;
 	background-size:82px;
 }
@@ -1283,7 +1283,7 @@ background-position-x:88%;
 .bg-meter {
 	background-image: url("../images/charts/meter-yellow.svg");
 	background-repeat:no-repeat;
-	background-position-x:88%;
+	background-position-x:92%;
 	background-position-y:10%;
 	background-size:82px;
 }
@@ -1292,7 +1292,7 @@ background-position-x:88%;
 .bg-connection {
 	background-image: url("../images/charts/connection-orange.svg");
 	background-repeat:no-repeat;
-	background-position-x:88%;
+	background-position-x:94%;
 	background-position-y:10%;
 	background-size:102px;
 	border: 1px solid #FC8F2B !important;
@@ -1712,8 +1712,20 @@ table.status-table {
     }
 
     .accordion input:checked + label + .content {
-      padding: 0 0 16rem 0;
+      padding: 0 0 12rem 0;
     }
+	
+	    .accordion .content2 {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    .accordion input:checked + label + .content2 {
+      padding: 0 0 22rem 0;
+	  overflow-y:scroll;
+    }
+	
 
 #nowTime {
 		background:none;
@@ -1796,9 +1808,11 @@ table.status-table {
 	color:#fff;
 	padding:6px 0;
 }
-.no-link a:hover {
+.no-link {
 	background:none !important;
 	cursor:default;
+	padding: 8px 0 8px 48px;
+	color:#fff;
 }
 
 .yellow {
