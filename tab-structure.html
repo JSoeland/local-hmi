@@ -15,9 +15,10 @@
     .tabs {
       display: flex;
       position: sticky;
-      top: 0;
+      top: 50px;
       z-index: 1000;
 	  border-bottom:2px solid #ddd;
+	  height:50px;
     }
 
     .tab {
@@ -33,7 +34,7 @@
 
     .tab-content {
       display: none;
-      height: calc(100vh - 48px);
+      height: calc(100vh - 100px);
       flex-direction: row;
     }
 
@@ -56,6 +57,12 @@
 	width:100%;
       background-color: #fff;
 	  padding: 0 0 0 1rem;
+    }
+	 .column.full {
+	  width:100%;
+      background-color: #fff;
+	  overflow-y: auto;
+
     }
 
     ul {
@@ -98,11 +105,21 @@
      height: -webkit-fill-available;
 	 max-height: calc(100vh - 150px);
 }
+.header {
+position:sticky;
+top:0;
+background: white;
+  z-index: 10;
+  height:40px;
+}
   </style>
 </head>
 <body>
 
   <!-- Tabs -->
+  <div class="header">
+  <h1>Title</h1>
+  </div>
   <div class="tabs">
     <div class="tab active" data-tab="tab1">Device</div>
     <div class="tab" data-tab="tab2">Points</div>
@@ -111,10 +128,12 @@
   <!-- Tab 1 Content -->
   <div id="tab1" class="tab-content active">
   
-    <div class="column right" id="details-column">
+    <div class="column full" id="details-column">
       <div class="details">
         <h2>Modbus Client</h2>
-        <p>Connection Fields here</p>
+        <ul>
+      <li>Form Field</li> <li>Form Field</li> <li>Form Field</li> <li>Form Field</li> <li>Form Field</li> <li>Form Field</li> <li>Form Field</li> <li>Form Field</li> <li>Form Field</li> <li>Form Field</li> <li>Form Field</li> <li>Form Field</li> <li>Form Field</li> <li>Form Field</li> <li>Form Field</li> <li>Form Field</li> <li>Form Field</li> <li>Form Field</li> <li>Form Field</li> <li>Form Field</li> <li>Form Field</li> <li>Form Field</li> <li>Form Field</li> <li>Form Field</li> <li>Form Field</li> <li>Form Field</li> <li>Form Field</li> <li>Form Field</li> <li>Form Field</li> <li>Form Field</li> <li>Form Field</li> <li>Form Field</li> <li>Form Field</li> <li>Form Field</li> <li>Form Field</li> <li>Form Field</li> <li>Form Field</li> <li>Form Field</li> <li>Form Field</li> <li>Form Field</li> <li>Form Field</li> <li>Form Field</li> <li>Form Field</li> <li>Form Field</li> <li>Form Field</li> <li>Form Field</li> <li>Form Field</li>
+    </ul>
       </div>
     </div>
   </div>
